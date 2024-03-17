@@ -1,0 +1,30 @@
+{
+  "name": "project_root",
+  "version": "1.0.0",
+  "description": "An online platform connecting pet shelters with potential adopters, facilitating the adoption process and promoting pet welfare.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pet",
+    "adoption",
+    "shelter",
+    "animals",
+    "pets",
+    "rescue",
+    "adopt",
+    "platform"
+  ],
+  "author": "beatre",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
+    "mongoose": "^8.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
