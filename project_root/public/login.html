@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .custom-button {
+            display: inline-block;
+            padding: 15px 270px;
+            background: #EC9309;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 20px;
+            font-family: Poppins;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+        .login-button { 
+        display: inline; /* Ensure inline display for the login button */
+        background: none; /* Remove background */
+        border: none; /* Remove border */
+        font-size: 20px; /* Maintain font size */
+        font-family: Poppins; /* Maintain font family */
+        font-weight: 800; /* Maintain font weight */
+        color: #EC9309; /* Maintain color */
+        cursor: pointer; /* Maintain cursor */
+        text-decoration: none; /* Remove underline */
+    }
+    </style>
 </head>
 <body>
         <div style="width: 425.61px; height: 518.56px; left: 1034.81px; top: 423.67px; position: absolute; transform: rotate(21.56deg); transform-origin: 0 0; background: #494949; border-radius: 99px"></div>
@@ -32,20 +58,16 @@
         </div>
         <div style="width: 354px; height: 104px; left: 119px; top: 152px; position: absolute; color: #494949; font-size: 48px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Login now.</div>
         <div style="width: 291px; height: 43px; left: 119px; top: 230px; position: absolute; color: #494949; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Hi, Welcome back 👋 </div>
-        <div style="width: 637px; height: 68px; left: 119px; top: 358px; position: absolute; opacity: 0.20; background: #FFD697; border-radius: 5px"></div>
-        <div style="width: 637px; height: 68px; left: 119px; top: 496px; position: absolute; opacity: 0.20; background: #FFD697; border-radius: 5px"></div>
-        <div style="width: 637px; height: 68px; left: 119px; top: 624px; position: absolute; background: #EC9309; border-radius: 5px"></div>
         <div style="width: 73px; height: 39px; left: 119px; top: 311px; position: absolute; color: #494949; font-size: 24px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Email</div>
-        <div style="width: 128px; height: 39px; left: 119px; top: 453px; position: absolute; color: #494949; font-size: 24px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Password</div>
+        <div style="width: 128px; height: 39px; left: 119px; top: 440px; position: absolute; color: #494949; font-size: 24px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Password</div>
         <div style="width: 187px; height: 26px; left: 335px; top: 584px; position: absolute; color: #EC9309; font-size: 20px; font-family: Inter; font-weight: 600; word-wrap: break-word">Forgot Password?</div>
-        <div style="width: 78px; height: 43px; left: 400px; top: 640px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Login</div>
+        <button class="custom-button" style="left: 93px; top: 620px; position: absolute;" onclick="login()">Login</button>
         <div style="width: 412px; height: 33px; left: 234px; top: 706px; position: absolute"><span style="color: black; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Not registered yet?</span><span style="color: #EC9309; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word"> </span><span style="color: #EC9309; font-size: 20px; font-family: Poppins; font-weight: 800; word-wrap: break-word">Create an account </span></div>
-        <div style="width: 42px; height: 42px; left: 681px; top: 509px; position: absolute">
-            <div style="width: 31.97px; height: 30.62px; left: 5.65px; top: 5.72px; position: absolute; background: black"></div>
-            <div style="width: 21.74px; height: 18.22px; left: 4.38px; top: 9.62px; position: absolute; background: black"></div>
-        </div>
-        <div style="width: 218px; height: 33px; left: 145px; top: 515px; position: absolute; color: rgba(0, 0, 0, 0.25); font-size: 20px; font-family: Poppins; font-weight: 300; word-wrap: break-word">Enter your password</div>
-        <div style="width: 197px; height: 33px; left: 145px; top: 378px; position: absolute; color: rgba(0, 0, 0, 0.25); font-size: 20px; font-family: Poppins; font-weight: 300; word-wrap: break-word">Enter your email id</div>
+       
+        <input type="text" style="width: 600px; height: 33px; left: 110px; top: 360px; position: absolute; color: rgb(0, 0, 0); font-size: 20px; font-family: Poppins; font-weight: 300; padding: 5px;" placeholder="Enter your email">
+
+        <input type="password" style="width: 600px; height: 33px; left: 110px; top: 480px; position: absolute; color: rgb(0, 0, 0); font-size: 20px; font-family: Poppins; font-weight: 300; padding: 5px;" placeholder="Enter your password">
+
         <div style="width: 1440px; height: 285px; left: 0px; top: 819px; position: absolute; background: #494949"></div>
         <div style="width: 1218px; height: 0px; left: 107px; top: 1054px; position: absolute; border: 0.50px white solid"></div>
         <div style="width: 167px; height: 594.73px; left: 168px; top: 435px; position: absolute">
@@ -79,5 +101,6 @@
         <img style="width: 556px; height: 285px; left: 876px; top: 819px; position: absolute" src="images/Footer.png" />
         <img style="width: 67px; height: 60px; left: 206px; top: 876px; position: absolute" src="images/logo.png" />
     </div>
+    <script src="login.js"></script>
 </body>
 </html>
