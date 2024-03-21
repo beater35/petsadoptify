@@ -1,21 +1,33 @@
-const { express, mongoose, bodyParser, bcrypt, dotenv } = require('./dependencies');
-const connectDB = require('./db');
-
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const User = require("./models/user.js");
+const userRoute = require("./routes/user.routes.js");
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// middleware
-app.use(express.static('./src/public'));
+const MONGODB_URI = process.env.MONGODB_URI;
+
+// Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-// routes
+app.use(express.static('./public'));
 
+// Routes
+app.use("/api/users", userRoute);
 
-// Connect to MongoDB
-connectDB()
+app.get("/", (req, res) => {
+  res.send("hello from node api");
+});
+
+mongoose
+  .connect(MONGODB_URI)
   .then(() => {
-    // Start the server once connected to the database
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+    console.log("database connected");
+    app.listen(3000, () => {
+      console.log("App listening on port 3000");
     });
+  })
+  .catch((err) => {
+    console.log("Connection failed!", err);
   });
