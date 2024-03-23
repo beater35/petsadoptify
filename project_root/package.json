@@ -2,8 +2,9 @@
   "name": "project_root",
   "version": "1.0.0",
   "description": "An online platform connecting pet shelters with potential adopters, facilitating the adoption process and promoting pet welfare.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
