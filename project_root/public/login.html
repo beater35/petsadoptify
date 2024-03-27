@@ -29,6 +29,25 @@
         cursor: pointer; /* Maintain cursor */
         text-decoration: none; /* Remove underline */
     }
+     /* Media query for smaller screens */
+     @media only screen and (max-width: 768px) {
+            /* Adjustments for smaller screens */
+            .custom-button {
+                padding: 15px 50px; /* Adjust padding for smaller screens */
+            }
+
+            /* Adjust font sizes for smaller screens */
+            .login-button,
+            .nav-button {
+                font-size: 16px;
+            }
+
+            /* Adjust logo size for smaller screens */
+            img.logo {
+                width: 40px;
+                height: 40px;
+            }
+        }
     </style>
 </head>
 <body>

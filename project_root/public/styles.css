@@ -1,0 +1,824 @@
+/* styles.css */
+
+/* Header */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Reset the default margin */
+
+}
+.header-bar {
+    width: 100%;
+    height: 97px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    width: 45.75px;
+    height: 46px;
+    position: absolute;
+    top: 30px;
+    left: 110px;
+}
+
+.brand {
+    width: auto;
+    position: absolute;
+    top: 40px;
+    left: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.brand span {
+    font-size: 24px;
+    font-family: Poppins;
+    line-height: 24px;
+    word-wrap: break-word;
+    margin: 0; /* Reset margin */
+}
+
+.brand .brand-name {
+    color: black;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.brand .brand-subtitle {
+    color: #EC9309;
+    font-weight: 300;
+}
+
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+}
+
+.menu {
+    width: auto;
+    position: absolute;
+    top: 45px;
+    left: 50%; /* Center the menu horizontally */
+    transform: translateX(-50%); /* Center the menu horizontally */
+    text-align: center;
+}
+
+.menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.menu-item:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth {
+    position: absolute;
+    top: 45px;
+    right: 110px;
+}
+
+.auth .menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.auth .menu-item.login:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth .menu-item.signup:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+/* Landing Page */
+
+.landing-container {
+    position: relative;
+
+}
+
+.landing-image {
+    position: absolute;
+    top: 0;
+    transform-origin: 0;
+    z-index: -1; /* Send the images to the back */
+
+}
+
+.landing-image:nth-child(1) {
+    left: 0;
+}
+
+.landing-image:nth-child(2) {
+    right: -15px;
+}
+
+
+
+.title {
+    position: absolute;
+    left: 110px;
+    top: 250px;
+    color: #EC9309;
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2.40px;
+    word-wrap: break-word;
+}
+
+.subtitle {
+    position: absolute;
+    left: 110px;
+    top: 320px;
+    color: #494949;
+    font-size: 85px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.action-button {
+    position: absolute;
+    width: 286px;
+    height: 39px;
+    left: 110px;
+    top: 600px;
+}
+
+.button-background {
+    position: absolute;
+    width: 286px;
+    height: 39px;
+    left: 0px;
+    top: 0px;
+    background: #EC9309;
+    border-radius: 25px;
+}
+
+.button-text {
+    position: absolute;
+    left: 29px;
+    top: 7px;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.button-line {
+    position: absolute;
+    width: 100px; /* Adjust the width to fit your design */
+    height: 2px; /* Adjust the height to fit your design */
+    left: 160px; /* Adjust the left position to position the arrow */
+    top: 20px; /* Adjust the top position to position the arrow */
+    background: white;
+}
+
+.button-line::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent; /* Adjust the size of the arrow */
+    border-bottom: 6px solid transparent; /* Adjust the size of the arrow */
+    border-left: 10px solid white; /* Adjust the size and color of the arrow */
+    right: -10px; /* Adjust the position of the arrow */
+    top: -4px; /* Adjust the position of the arrow */
+}
+
+
+.stat-box1{
+    position: absolute;
+    width: 222px;
+    height: 70px;
+    top: 150px;
+    left: 1150px;
+}
+.stat-box2{
+    position: absolute;
+    width: 222px;
+    height: 70px;
+    top: 350px;
+    left: 800px;
+}
+.stat-box3{
+    position: absolute;
+    width: 222px;
+    height: 70px;
+    top: 600px;
+    left: 1100px;
+}
+.stat-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align content vertically to center */
+    align-items: center; /* Align content horizontally to center */
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+
+.stat-value {
+    color: #EC9309;
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.stat-label {
+    color: black;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.description {
+    position: absolute;
+    width: 616px;
+    height: 134px;
+    left: 110px;
+    top: 420px;
+    text-align: justify;
+    color: #494949;
+    font-size: 20px;
+    font-family: Product Sans;
+    font-weight: 400;
+    line-height: 29px;
+    word-wrap: break-word;
+}
+
+.search-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top:750px;
+}
+
+.overlay {
+    width: 1440px;
+    height: 371px;
+    left: 0px;
+    top: 143px;
+    position: absolute;
+    background: black;
+}
+
+.search-box {
+    width: 658px;
+    height: 66px;
+    left: 395px;
+    top: 261px;
+    position: absolute;
+    background: white;
+    border-radius: 15px;
+}
+.search-box {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input[type="text"] {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.search-box button {
+    width: 40px;
+    height: 40px;
+    margin-left: 0px;
+    background-color: #e1dfdb;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-box button img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
+}
+
+.title1 {
+    left: 565px;
+    top: 367px;
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.description1 {
+    left: 520px;
+    top: 403px;
+    position: absolute;
+    color: #FFD697;
+    font-size: 25px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.listing-container {
+    width: 100%; /* Adjusted to percentage for responsiveness */
+    max-width: 1200px; /* Added max-width for large screens */
+    margin: 0 auto; /* Center align the container */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    top:1350px;
+}
+
+.pet-card {
+    width: calc(25% - 20px); /* Adjusted width calculation for responsive cards */
+    margin-bottom: 20px; /* Adjust margin between cards */
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
+    height: 320px;
+    top:90px;
+}
+
+.heading {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.sub-heading {
+    left: 0px;
+    top: 28px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 36px;
+    word-wrap: break-word;
+}
+
+.card-overlay {
+    width: 270px;
+    height: 340px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 15px;
+}
+
+.pet-image {
+    width: 256.58px;
+    height: 185.42px;
+    left: 30px;
+    top: 7.22px;
+    position: absolute;
+}
+
+
+.pet-image img {
+    width: 256.58px;
+    height: 185.42px;
+    left: -22.73px;
+    top: 0;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.pet-details {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0px 18px;
+    top:-30px;
+}
+
+.pet-name {
+    color: #494949;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.pet-info {
+    color: #858383;
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.adopt-button {
+    width: 220px;
+    height: 28px;
+    left: 18px;
+    top: 300px;
+    position: absolute;
+    background: #EC9309;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+    color: #fff;
+}
+
+.adopt-button:hover {
+    background: #c3750c;
+}
+
+.view-more-button {
+    width: 176px;
+    height: 42px;
+    left: 1030px;
+    top: 25px;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid #EC9309; /* Updated to specify border style and width */
+    cursor: pointer;
+    background-color: transparent; /* Added transparent background */
+    color: #EC9309; /* Added text color */
+    font-size: 14px; /* Added font size */
+    font-family: Poppins; /* Added font family */
+    font-weight: 500; /* Added font weight */
+    line-height: 42px; /* Centering text vertically */
+    text-align: center; /* Centering text horizontally */
+    transition: background-color 0.3s, color 0.3s; /* Added transition for hover effect */
+}
+
+.view-more-button:hover {
+    background-color: #EC9309; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+.view-more-button-text {
+    left: 49px;
+    top: 11px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.banner-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 1500px;
+}
+
+.banner-background {
+    width: 100%;
+    height: 336px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: #EC9309;
+}
+
+.banner-shape {
+    width: 402.96px;
+    height: 353.88px;
+    left: 531.38px;
+    top: 0;
+    position: absolute;
+    transform: rotate(68.56deg);
+    transform-origin: 0 0;
+    background: #FFECEC;
+    border-radius: 43px;
+}
+
+.banner-image {
+    width: 726px;
+    height: 336px;
+    left: 31px;
+    top: 0;
+    position: absolute;
+}
+
+.banner-text {
+    color: white;
+    position: absolute;
+    top: 76px;
+    left: 759px;
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+}
+
+.banner-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.banner-subtitle {
+    position: relative;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 24px;
+    bottom: -10px;
+    left: 115px;
+}
+
+.banner-description {
+    width: 452px;
+    text-align: right;
+    font-size: 14px;
+    font-family: Product Sans;
+    font-weight: 400;
+    line-height: 18px;
+    word-wrap: break-word;
+    position: relative;
+    bottom: -50px;
+    left: 80px;
+}
+
+.banner-button {
+    width: 286px;
+    height: 39px;
+    left: 72%;
+    transform: translateX(-50%);
+    top:200px; /* Adjusted position to appear at the bottom */
+    position: absolute;
+    z-index: 1;
+}
+
+
+.button1-background {
+    width: 286px;
+    height: 39px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+}
+
+.button1-text {
+    position: absolute;
+    left: 29px;
+    top: 7px;
+    color: #EC9309;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.button1-line {
+    position: absolute;
+    width: 80px; /* Adjust the width to fit your design */
+    height: 2px; /* Adjust the height to fit your design */
+    left: 180px; /* Adjust the left position to position the arrow */
+    top: 20px; /* Adjust the top position to position the arrow */
+    background: #EC9309;
+}
+
+.button1-line::before {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent; /* Adjust the size of the arrow */
+    border-bottom: 6px solid transparent; /* Adjust the size of the arrow */
+    border-left: 10px solid #EC9309; /* Adjust the size and color of the arrow */
+    right: -10px; /* Adjust the position of the arrow */
+    top: -4px; /* Adjust the position of the arrow */
+}
+
+
+
+/* Responsive Styles ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   */
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none; /* Hide the menu by default on smaller screens */
+        position: absolute;
+        top: 90px; /* Position the menu below the header */
+        width: 100%;
+        background-color: white;
+        box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+        z-index: 999; /* Ensure it's above other content */
+    }
+    .logo {
+        left: 15px;
+    }
+    .brand{
+        left: 70px;
+    }
+    .menu-toggle {
+        display: block; /* Show the menu toggle on smaller screens */
+        position: absolute;
+        top: 30px;
+        right: 20px; /* Position the toggle on the right side */
+        cursor: pointer;
+        font-size: 30px; /* Increase the font size for the toggle icon */
+    }
+
+    .menu-item {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .auth {
+        display: none; /* Hide the authentication buttons on smaller screens */
+    }
+    .landing-image:nth-child(2) {
+        display: none;
+    }
+    .landing-image:nth-child(1) {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Adjust layout for the landing page */
+    .title {
+        left: 20px;
+        top: 150px;
+        font-size: 28px;
+    }
+
+    .subtitle {
+        left: 20px;
+        top: 200px;
+        font-size: 60px;
+    }
+
+    .action-button {
+        width: 80%;
+        left: 190px;        transform: translateX(-50%);
+        top: 570px;
+    }
+
+    .button-background {
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+    }
+
+    .button-text {
+        font-size: 18px;
+        line-height: 50px;
+        top: 0px;
+    }
+
+    .button-line {
+        left: 60%;
+        transform: translateX(-50%);
+        top: 25px;
+    }
+
+    /* Adjust layout for the stats */
+    .stat-box1,
+    .stat-box2,
+    .stat-box3 {
+        width: 30%; /* Adjust the width to fit three stats side by side */
+        height: 70px;
+        position: absolute;
+        top: 280px; /* Adjust top position */
+    }
+
+    .stat-box1 {
+        left: 10px;
+    }
+
+    .stat-box2 {
+        left: calc(50% - 65px); /* Adjust left position */
+        z-index: 1;
+    }
+
+    .stat-box3 {
+        left: calc(100% - 140px); /* Adjust left position */
+    }
+
+    /* Adjust layout for the stats background */
+    .stat-background {
+        width: 80%;
+        height: 70%;
+        border-radius: 15px;
+    }
+
+    /* Adjust layout for the stats text */
+    .stat-value {
+        font-size: 14px;
+    }
+
+    .stat-label {
+        font-size: 10px;
+    }
+
+    /* Adjust layout for the description */
+    .description {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 400px; /* Adjust top position */
+        font-size: 16px;
+    }
+    .search-box {
+        width: 90%;
+        padding: 0 15px;
+        top:200px;
+    }
+
+    .title1 {
+        font-size: 18px; /* Adjust font size */
+        color: #EC9309;
+        left: 20px;
+        top: -60px;
+    }
+
+    .description1 {
+        color: #494949;
+        font-size: 14px; /* Adjust font size */
+        left: 20px;
+        top: -40px;
+    }
+
+    /* Adjust overlay height */
+    .overlay {
+        height: 110px;
+    }
+    .listing-container {
+        display: none;
+    }
+        
+
+}
