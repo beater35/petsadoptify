@@ -6,6 +6,13 @@ body {
     margin: 0; /* Reset the default margin */
 
 }
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999; /* Ensures the header stays on top of other content */
+}
+
 .header-bar {
     width: 100%;
     height: 97px;
@@ -547,10 +554,21 @@ body {
 }
 
 .banner-shape {
-    width: 402.96px;
-    height: 353.88px;
+    width: 280px;
+    height: 200.88px;
     left: 531.38px;
     top: 0;
+    position: absolute;
+    transform: rotate(68.56deg);
+    transform-origin: 0 0;
+    background: #FFECEC;
+    border-radius: 43px;
+}
+.banner-shape2 {
+    width: 220px;
+    height: 200.88px;
+    left: 300.38px;
+    top: 50px;
     position: absolute;
     transform: rotate(68.56deg);
     transform-origin: 0 0;
@@ -600,10 +618,10 @@ body {
     font-size: 14px;
     font-family: Product Sans;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 17px;
     word-wrap: break-word;
     position: relative;
-    bottom: -50px;
+    bottom: -40px;
     left: 80px;
 }
 
@@ -612,7 +630,7 @@ body {
     height: 39px;
     left: 72%;
     transform: translateX(-50%);
-    top:200px; /* Adjusted position to appear at the bottom */
+    top: 180px; /* Adjusted position to appear at the bottom */
     position: absolute;
     z-index: 1;
 }
@@ -661,6 +679,113 @@ body {
     top: -4px; /* Adjust the position of the arrow */
 }
 
+.footer-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 1830px;
+}
+
+.footer-background {
+    width: 100%;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #494949;
+}
+
+.logo1 {
+    position: absolute;
+    top: 175px;
+    left: 169px;
+}
+
+.logo1 .primary-text {
+    color: white;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.logo1 .secondary-text {
+    color: #EC9309;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.copyright,
+.footer-links,
+.quick-links,
+.navigation-links {
+    position: absolute;
+    color: white;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.copyright {
+    top: 249px;
+    left: 576px;
+    font-size: 15px;
+}
+
+.footer-links {
+    top: 249px;
+    left: 170px;
+}
+
+.footer-links .footer-link {
+    margin-right: 20px;
+    color: white; /* Keep the text white */
+}
+
+.quick-links {
+    top: 40px;
+    left: 580px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navigation-links {
+    top: 90px;
+    left: 583px;
+}
+.footer-divider {
+    width: 100%;
+    height: 0.1px;
+    background-color: white;
+    position: absolute;
+    top: 235px; /* Adjust position as needed */
+}
+.navigation-links .nav-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-image {
+    width: 500px;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 980px;
+    z-index: 1;
+}
+
+.footer-logo {
+    width: 81px;
+    height: 82px;
+    position: absolute;
+    top: 80px;
+    left: 204px;
+}
 
 
 /* Responsive Styles ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   */
@@ -793,9 +918,9 @@ body {
         font-size: 16px;
     }
     .search-box {
-        width: 90%;
+        width: 100%;
         padding: 0 15px;
-        top:200px;
+        top:180px;
     }
 
     .title1 {
@@ -814,11 +939,129 @@ body {
 
     /* Adjust overlay height */
     .overlay {
-        height: 110px;
+       display: none;
+    }
+    .search-img{
+        display: none;
     }
     .listing-container {
         display: none;
     }
-        
+    .banner-container {
+        width: 100%;
+        position: relative;
+        top: 1080px;
+    }
+    
+    .banner-background {
+        width: 110%;
+        height: 300px;
+        position: absolute;
+        background: #EC9309;
+        top:-100px;
+        z-index: -1;
+    }
+    
+    .banner-shape {
+        display: none;
+    }
+    
+    .banner-shape2 {
+        display: none; /* Hide the second shape on smaller screens */
+    }
+    
+    .banner-image {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .banner-text {
+        color: white;
+        position: absolute;
+        top: 0%;
+        left: 200px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 80%; /* Adjusted width for responsiveness */
+    }
+    
+    .banner-title {
+        font-size: 24px; /* Adjusted font size */
+    }
+    
+    .banner-subtitle {
+        font-size: 15px; /* Adjusted font size */
+        left: -50px;
+        top: -0px;
+    }
+    
+    .banner-description {
+        display: none;
+    }
+    
+    .banner-button {
+        display: none;
+    }
+    .footer-divider {
+        display: none; /* Hide the divider on smaller screens */
+    }
 
+    .footer-section {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 1200px; /* Reset top position */
+    }
+
+
+    .copyright{
+        top: 300px;
+        left: 20%;
+        color: black;
+        width: 80%;
+        margin-bottom: 20px;
+        
+    }
+    .footer-background{
+        display: none;
+    }
+    .footer-links{
+        left: 20px;
+    }
+    .navigation-links {
+        width: 100%;
+        position: relative; /* Change position to relative */
+        color: rgb(0, 0, 0);
+        font-family: Poppins;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left; /* Center align text */
+        left: 20px;
+        top: 120px;
+    }
+
+    .footer-links .footer-link {
+        margin-right: 10px;
+        color: black;
+        width: 100%;
+    }
+
+    .navigation-links .nav-link {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px; /* Adjust font size for smaller screens */
+        color: black;
+    }
+
+    .footer-image{
+      display: none;    
+    }
+    .footer-logo,
+    .logo1,
+    .quick-links {
+        display: none; /* Hide the footer image and logo on smaller screens */
+    }
 }
