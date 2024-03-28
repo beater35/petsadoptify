@@ -220,20 +220,52 @@ body {
     height: 70px;
     top: 150px;
     left: 1150px;
+    animation: floatAnimation1 3s infinite alternate; /* Using animation for floating effect */
+}
+
+@keyframes floatAnimation1 {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px); /* Adjust this value as needed */
+    }
+}
+@keyframes floatAnimation2 {
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateX(-10px); /* Adjust this value as needed */
+    }
+}
+
+@keyframes floatAnimation3 {
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateX(10px); /* Adjust this value as needed */
+    }
 }
 .stat-box2{
     position: absolute;
     width: 222px;
     height: 70px;
     top: 350px;
-    left: 800px;
+    left: 800px;    
+    animation: floatAnimation2 3s infinite alternate; /* Using animation for floating effect */
+
 }
 .stat-box3{
     position: absolute;
     width: 222px;
     height: 70px;
     top: 600px;
-    left: 1100px;
+    left: 1100px;    
+    animation: floatAnimation3 3s infinite alternate; /* Using animation for floating effect */
+
+
 }
 .stat-background {
     display: flex;
@@ -954,7 +986,7 @@ body {
     }
     
     .banner-background {
-        width: 110%;
+        width: 100%;
         height: 300px;
         position: absolute;
         background: #EC9309;
@@ -1063,5 +1095,8 @@ body {
     .logo1,
     .quick-links {
         display: none; /* Hide the footer image and logo on smaller screens */
+    }
+    .moving-dog{
+        z-index: -1;
     }
 }
