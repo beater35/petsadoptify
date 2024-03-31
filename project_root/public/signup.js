@@ -25,3 +25,20 @@ document.getElementById('signup-form').addEventListener('submit', async (event) 
         console.error('Error creating user:', error.message);
     }
 });
+
+function register() {
+    // Here you can add the registration logic, such as sending a request to the server
+    // to register the user with the provided information.
+    // For demonstration purposes, you can log the inputs to the console.
+    alert("You clicked register!");
+
+    const email = document.querySelector('.email-input').value;
+    const username = document.querySelector('.username-input').value;
+    const dob = document.querySelector('.dob-input').value;
+    const password = document.querySelector('.password-input').value;
+
+    console.log('Email:', email);
+    console.log('Username:', username);
+    console.log('Date of Birth:', dob);
+    console.log('Password:', password);
+}

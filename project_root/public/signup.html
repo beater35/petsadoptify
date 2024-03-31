@@ -4,128 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <style>
-        .custom-button {
-            display: inline-block;
-            padding: 10px 270px;
-            background: #EC9309;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-size: 20px;
-            font-family: Poppins;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none; /* Remove underline */
-        }
-        .login-button { 
-        display: inline; /* Ensure inline display for the login button */
-        background: none; /* Remove background */
-        border: none; /* Remove border */
-        font-size: 20px; /* Maintain font size */
-        font-family: Poppins; /* Maintain font family */
-        font-weight: 800; /* Maintain font weight */
-        color: #EC9309; /* Maintain color */
-        cursor: pointer; /* Maintain cursor */
-        text-decoration: none; /* Remove underline */
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 
 </head>
 <body>
-       <div style="width: 1440px; height: 97px; left: 0px; top: 0px; position: absolute">
-    <div class="navigation_bar">
-        <div style="width: 1440px; height: 97px; left: 0px; top: 0px; position: absolute; background: white; box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08)"></div>
-        <div style="left: 149px; top: 44px; position: absolute">
-            <span style="color: black; font-size: 24px; font-family: Poppins; font-weight: 700; line-height: 24px; word-wrap: break-word">pets</span>
-            <span style="color: #EC9309; font-size: 24px; font-family: Poppins; font-weight: 300; line-height: 24px; word-wrap: break-word">ADOPTIFY</span>
+    <div class="header">
+        <div class="header-bar"></div>
+        <a href="#" class="logo"><img src="images/logo.png" alt="Logo"></a>
+        <div class="brand">
+            <span class="brand-name">pets</span>
+            <span class="brand-subtitle">ADOPTIFY</span>
         </div>
-        <div style="width: 154px; height: 25px; left: 1170px; top: 43px; position: absolute">
-            <button class="nav-button" style="border: none; background: none; color: #EC9309; font-size: 20px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word" onclick="window.location.href='login.html'">Login</button>
-            <button class="nav-button" style="border: none; background: none; color: #EC9309; font-size: 20px; font-family: Poppins; font-weight: 600; line-height: 24px; word-wrap: break-word" onclick="window.location.href='signup.html'">Signup</button>
+        <input type="checkbox" id="toggle-menu">
+        <label for="toggle-menu" class="menu-toggle">☰</label>
+        <div class="menu">
+            <a href="home.html" class="menu-item">Home</a>
+            <a href="aboutus.html" class="menu-item">About Us</a>
+            <a href="listings.html" class="menu-item">Listings</a>
+            <a href="contact.html" class="menu-item">Contact Us</a>
         </div>
-        <div style="width: 600px; height: 24px; left: 433px; top: 43px; position: absolute">
-            <button class="nav-button" style="border: none; background: none; color: black; font-size: 20px; font-family: Poppins; font-weight: 500; line-height: 24px; word-wrap: break-word; margin-right: 20px;" onclick="window.location.href='index.html'">Home</button>
-<button class="nav-button" style="border: none; background: none; color: black; font-size: 20px; font-family: Poppins; font-weight: 500; line-height: 24px; word-wrap: break-word; margin-right: 20px;" onclick="window.location.href='#'">About Us</button>
-<button class="nav-button" style="border: none; background: none; color: black; font-size: 20px; font-family: Poppins; font-weight: 500; line-height: 24px; word-wrap: break-word; margin-right: 20px;" onclick="window.location.href='#'">Listings</button>
-<button class="nav-button" style="border: none; background: none; color: black; font-size: 20px; font-family: Poppins; font-weight: 500; line-height: 24px; word-wrap: break-word; margin-right: 20px;" onclick="window.location.href='#'">Blogs</button>
-<button class="nav-button" style="border: none; background: none; color: black; font-size: 20px; font-family: Poppins; font-weight: 500; line-height: 24px; word-wrap: break-word;" onclick="window.location.href='#'">Contact Us</button>
-</div>
+        <div class="auth">
+            <a href="login.html" class="menu-item login">Login</a>
+            <a href="signup.html" class="menu-item signup">Signup</a>
+        </div>
     </div>
-</div>
+        
 
-
-        <div style="left: 896px; top: 186px; position: absolute; color: #494949; font-size: 52px; font-family: Poppins; font-weight: 700; text-transform: capitalize; line-height: 68px; word-wrap: break-word">One more friend</div>
-        <div style="left: 945px; top: 244px; position: absolute; color: #494949; font-size: 36px; font-family: Poppins; font-weight: 500; text-transform: capitalize; line-height: 54px; word-wrap: break-word">Thousands more fun!</div>
-        <div style="width: 21px; height: 20px; left: 217px; top: 1010px; position: absolute; background: white"></div>
-        <div style="width: 647.95px; height: 498.85px; left: 750px; top: 337px; position: absolute">
-            <img style="width: 600px; height: 575.01px; left: 38.78px; top: -70px; position: absolute" src="images/Dog.png" />
+    <div class="container">
+        <div class="shape1"></div>
+        <div class="shape2"></div>
+        <div class="title">One more friend</div>
+        <div class="subtitle">Thousands more fun!</div>
+        <div class="image-container">
+            <img src="images/Dog.png" alt="Signup Image" />
         </div>
-        <div style="width: 1440px; height: 668.73px; left: 0px; top: 435px; position: absolute">
-            <div style="width: 1440px; height: 285px; left: 0px; top: 383.73px; position: absolute; background: #494949"></div>
-            <div style="width: 1224.07px; height: 0px; left: 108px; top: 619.19px; position: absolute; border: 0.50px white solid"></div>
-            <div style="width: 163px; height: 594.73px; left: 169px; top: 0px; position: absolute">
-                <div style="width: 162px; height: 594.73px; left: 1px; top: 0px; position: absolute">
-                    <div style="width: 21px; height: 6.22px; left: 47px; top: 0px; position: absolute; background: white"></div>
-                    <div style="width: 21px; height: 20px; padding-top: 2.96px; padding-bottom: 2.97px; left: 94px; top: 574.73px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-                        <div style="width: 21px; height: 14.07px; background: white"></div>
-                    </div>
-                    <div style="width: 21px; height: 20px; padding-right: 0.01px; left: 141px; top: 574.73px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-                        <div style="width: 20.99px; height: 20px; position: relative">
-                            <div style="width: 20.99px; height: 20px; left: 0px; top: 0px; position: absolute; background: white"></div>
-                            <div style="width: 10.79px; height: 10.27px; left: 5.11px; top: 4.86px; position: absolute; background: white"></div>
-                            <div style="width: 2.52px; height: 2.40px; left: 14.85px; top: 3.46px; position: absolute; background: white"></div>
-                        </div>
-                    </div>
-                    <div style="width: 21px; height: 20px; left: 0px; top: 574.73px; position: absolute">
-                        <div style="width: 21px; height: 16.25px; left: -0px; top: 1.87px; position: absolute; background: white"></div>
-                    </div>
-                </div>
-                <div style="left: 0px; top: 524.73px; position: absolute"><span style="color: white; font-size: 24px; font-family: Poppins; font-weight: 700; line-height: 24px; word-wrap: break-word">pets</span><span style="color: #EC9309; font-size: 24px; font-family: Poppins; font-weight: 300; line-height: 24px; word-wrap: break-word">ADOPTIFY</span></div>
-            </div>
-            <div style="left: 576px; top: 632.73px; position: absolute; color: white; font-size: 15px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word"> Pets Adoptify 2024 All Rights Reserved</div>
-            <div style="left: 170px; top: 632.73px; position: absolute; color: white; font-size: 15px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Privacy</div>
-            <div style="left: 243px; top: 632.73px; position: absolute; color: white; font-size: 15px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Policy</div>
-            <div style="left: 612px; top: 428.73px; position: absolute; color: white; font-size: 20px; font-family: Poppins; font-weight: 500; line-height: 24px; word-wrap: break-word">Quick Links</div>
-            <div style="left: 612px; top: 488.73px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Home</div>
-            <div style="left: 612px; top: 523.73px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">About US</div>
-            <div style="left: 612px; top: 560.73px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Listings</div>
-            <div style="left: 725px; top: 529.73px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Contact Us</div>
-            <div style="left: 725px; top: 488.73px; position: absolute; color: white; font-size: 18px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Blogs</div>
-            <img style="width: 483px; height: 284px; left: 957px; top: 384px; position: absolute" src="images/Footer.png" />
+        <div class="register-title">Register.</div>
+        <div class="welcome-message">Welcome To Pets Adoptify.</div>
+        <div class="input-container">
+            <div class="label">Email:</div>
+            <input type="email" class="input" placeholder="Enter a valid email.">
+            <div class="label">Username:</div>
+            <input type="text" class="input" placeholder="Username">
+            <div class="label">Date of Birth:</div>
+            <input type="date" class="input">
+            <div class="label">Password:</div>
+            <input type="password" class="input" placeholder="Password">
         </div>
-        <div style="width: 356px; height: 104px; left: 93px; top: 157px; position: absolute; color: black; font-size: 48px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Register.</div>
-        <div style="width: 273px; height: 34px; left: 93px; top: 233px; position: absolute; color: black; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Welcome To Pets Adoptify.</div>
-       
-        
-        <div style="width: 73px; height: 39px; left: 93px; top: 290px; position: absolute; color: black; font-size: 24px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Email</div>
-        <div style="width: 128px; height: 39px; left: 93px; top: 420px; position: absolute; color: black; font-size: 24px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Password</div>
-        <div style="width: 227px; height: 39px; left: 93px; top: 549px; position: absolute; color: black; font-size: 24px; font-family: Poppins; font-weight: 600; word-wrap: break-word">Confirm Password</div>
-        
-       
-        
-        <div style="width: 345px; height: 33px; left: 236px; top: 756px; position: absolute">
-            <span style="color: black; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word">Already Have an Account?</span>
-            <span style="color: #388409; font-size: 20px; font-family: Poppins; font-weight: 500; word-wrap: break-word"> </span>
-            <!-- "LOGIN" button -->
-            <button class="login-button" style="background: none; border: none; color: #EC9309; cursor: pointer; font-size: 20px; font-family: Poppins; font-weight: 800; word-wrap: break-word;" onclick="login()">LOGIN</button>
+        <div class="register-button" onclick="register()">Register</div>
+        <div class="login-message">
+            <span>Already Have an Account?</span>
+            <span class="login-link">LOGIN</span>
         </div>
-
-        <form id="signup-form">
-       
-        <input id="password" type="password" style="width: 600px; height: 33px; left: 100px; top: 470px; position: absolute; color: rgba(0, 0, 0, 0.25); font-size: 20px; font-family: Poppins; font-weight: 300; padding: 5px;" placeholder="Enter your password">
-
-        <input type="password" style="width: 600px; height: 33px; left: 100px; top: 590px; position: absolute; color: rgba(0, 0, 0, 0.25); font-size: 20px; font-family: Poppins; font-weight: 300; padding: 5px;" placeholder="Confirm your password">
-
-        <input id="email" type="text" style="width: 600px; height: 33px; left: 100px; top: 350px; position: absolute; color: rgba(0, 0, 0, 0.729); font-size: 20px; font-family: Poppins; font-weight: 300; padding: 5px;" placeholder="Enter your email id">
-
-        <button class="custom-button" style="left: 93px; top: 674px; position: absolute;" type="register">Register</button>
-        
-        </form>
-
-        <img style="width: 68px; height: 60px; left: 209px; top: 876px; position: absolute" src="images/logo.png" />
-        <img style="width: 46px; height: 46px; left: 86px; top: 33px; position: absolute" src="images/logo.png" />
     </div>
+
+    <div class="footer-section">
+        <div class="footer-background"></div>
+        <div class="logo1">
+            <span class="primary-text">pets</span><span class="secondary-text">ADOPTIFY</span>
+        </div>
+        <div class="copyright">© Pets Adoptify 2024 All Rights Reserved ©</div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy</a>
+            <a href="#" class="footer-link">Policy</a>
+        </div>
+        <div class="quick-links">Quick Links</div>
+        <div class="navigation-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link">Listings</a>
+            <a href="#" class="nav-link">Contact Us</a>
+        </div>
+        <img src="images/Footer.png" alt="Footer Image" class="footer-image">
+        <img src="images/logo.png" alt="Footer Logo" class="footer-logo">
+        <div class="footer-divider"></div>
+    </div>
+
     <script src="signup.js"></script>
 </body>
 </html>
