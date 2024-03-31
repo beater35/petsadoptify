@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const User = require('../models/user');
 
 // Read users
 const getUsers = async (req, res) => {
@@ -13,11 +13,11 @@ const getUsers = async (req, res) => {
 // Read user by email
 const getUser = async (req, res) => {
 	try {
-		const {email} = req.params;
-		const user = await User.findOne({email: email});
+		const { email } = req.params;
+		const user = await User.findOne({ email: email });
 		res.status(200).json(user);
 	} catch (error) {
-		res.status(500).json({message: error.message});
+		res.status(500).json({ message: error.message });
 	}
 };
 
@@ -50,7 +50,7 @@ const updateUser = async (req, res) => {
 // Delete user
 const deleteUser = async (req, res) => {
     try {
-        const {email} = req.params;
+        const { email } = req.params;
         const user = await User.findOneAndDelete({ email: email });
 
         if (!user) {

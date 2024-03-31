@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const User = require("./models/user.js");
 const userRoute = require("./routes/user.routes.js");
+const petRoute = require("./routes/pet.routes.js");
 const app = express();
 
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -15,6 +15,7 @@ app.use(express.static('./public'));
 
 // Routes
 app.use("/api/users", userRoute);
+app.use("/api/pets", petRoute);
 
 app.get("/", (req, res) => {
   res.send("hello from node api");
