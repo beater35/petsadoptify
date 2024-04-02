@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a  class="logo"><img src="images/logo.png" alt="Logo"></a>
+            <div class="footer-divider"></div>
+
+
+            <ul>
+                
+                <li><a href="#Dashboard">Dashboard</a></li>
+                <li><a href="#user-list">User List</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <section id="Dashboard">
+                <div class="dash">Admin Dashboard</div>
+
+                <h2>Upload Pet</h2>
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <label for="pet-name">Pet Name:</label>
+                        <input type="text" id="pet-name" name="pet-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="pet-breed">Pet Breed:</label>
+                        <input type="text" id="pet-breed" name="pet-breed" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="pet-gender">Pet Gender:</label>
+                        <select id="pet-gender" name="pet-gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="pet-age">Pet Age:</label>
+                        <input type="number" id="pet-age" name="pet-age" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="additional-info">Additional Information:</label>
+                        <textarea id="additional-info" name="additional-info"></textarea>
+                    </div>
+                    <button type="submit">Upload</button>
+                </form>
+                <h2>Pet Statistics</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <h3>Total Adopted Pets:</h3>
+                        <p>25</p>
+                    </div>
+                    <div class="stat1">
+                        <h3>Total Posted Pets:</h3>
+                        <p>50</p>
+                    </div>
+                </div>
+            </section>
+            <section id="user-list" style="display: none;"> <!-- Add inline style to hide by default -->
+                <h2>User List</h2>
+                <table class="user-table"> <!-- Change from ul to table -->
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Username</th>
+                            <th>Date of Birth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>user1@example.com</td>
+                            <td>********</td>
+                            <td>User1</td>
+                            <td>1990-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>user1@example.com</td>
+                            <td>********</td>
+                            <td>User1</td>
+                            <td>1990-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>user1@example.com</td>
+                            <td>********</td>
+                            <td>User1</td>
+                            <td>1990-01-01</td>
+                        </tr>
+                        <tr>
+                            <td>user1@example.com</td>
+                            <td>********</td>
+                            <td>User1</td>
+                            <td>1990-01-01</td>
+                        </tr>
+                        <!-- Add more rows for additional users here -->
+                    </tbody>
+                </table>
+            </section>
+            
+        </div>
+    </div>
+    <!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Hide user list section by default
+        $('#user-list').hide();
+
+        // Toggle visibility of sections when their respective links are clicked
+        $('li a').click(function(){
+            var targetSection = $(this).attr('href');
+            if (targetSection === '#user-list') {
+                $('#Dashboard').hide();
+                $('#user-list').show();
+            } else {
+                $('#user-list').hide();
+                $('#Dashboard').show();
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
