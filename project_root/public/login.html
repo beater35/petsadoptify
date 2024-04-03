@@ -6,6 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="login.css">
     <link rel="icon" type="image/png" href="images/logo.png">
+    
 
 </head>
 <body>
@@ -41,14 +42,18 @@
         </div>
         <div class="register-title">Login..</div>
         <div class="welcome-message">Hi! Welcome back.</div>
+
+        <form method = "post" id = "login-form">
         <div class="input-container">
             <div class="label">Email:</div>
-            <input type="email" class="input" placeholder="Enter a valid email.">
+            <input type="email" class="input" id="email" name = "email" placeholder="Enter a valid email.">
             <div class="label">Password:</div>
-            <input type="password" class="input" placeholder="Password">
+            <input type="password" class="input" id="password" name = "password" placeholder="Password">
             <div class="forgot-password" onclick="forgot()" >Forgot Password?</div>
         </div>
-        <div class="register-button" onclick="login()">Login</div>
+    
+        <button type="submit" class="register-button">Login</button>
+    </form>
         <div class="login-message">
             <span>Don't Have an Account?</span>
             <a href="signup.html" class="login-link" >Sign Up</a>

@@ -41,17 +41,22 @@
         </div>
         <div class="register-title">Register.</div>
         <div class="welcome-message">Welcome To Pets Adoptify.</div>
-        <div class="input-container">
-            <div class="label">Email:</div>
-            <input type="email" class="input" placeholder="Enter a valid email.">
-            <div class="label">Username:</div>
-            <input type="text" class="input" placeholder="Username">
-            <div class="label">Date of Birth:</div>
-            <input type="date" class="input">
-            <div class="label">Password:</div>
-            <input type="password" class="input" placeholder="Password">
-        </div>
-        <div class="register-button" onclick="register()">Register</div>
+
+        <form method="post" id="signup-form">
+            <div class="input-container">
+                <div class="label">Email:</div>
+                <input type="email" class="input" id="email" placeholder="Enter a valid email.">
+                <div class="label">Username:</div>
+                <input type="text" class="input" id="username" placeholder="Username">
+                <div class="label">Date of Birth:</div>
+                <input type="date" class="input" id="dob">
+                <div class="label">Password:</div>
+                <input type="password" class="input" id="password" placeholder="Password">
+            </div>
+            <!-- Change button type to submit -->
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        
         <div class="login-message">
             <span>Already Have an Account?</span>
             <span class="login-link">LOGIN</span>
@@ -80,6 +85,6 @@
         <div class="footer-divider"></div>
     </div>
 
-    <script src="signup.js"></script>
+    <script src="signupfront.js"></script>
 </body>
 </html>
