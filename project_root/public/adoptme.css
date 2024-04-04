@@ -1,0 +1,460 @@
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Reset the default margin */
+    font-family: 'Poppins', sans-serif;
+
+}
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999; /* Ensures the header stays on top of other content */
+}
+
+.header-bar {
+    width: 100%;
+    height: 97px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    width: 45.75px;
+    height: 46px;
+    position: absolute;
+    top: 30px;
+    left: 110px;
+}
+
+.brand {
+    width: auto;
+    position: absolute;
+    top: 40px;
+    left: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.brand span {
+    font-size: 24px;
+    font-family: Poppins;
+    line-height: 24px;
+    word-wrap: break-word;
+    margin: 0; /* Reset margin */
+}
+
+.brand .brand-name {
+    color: black;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.brand .brand-subtitle {
+    color: #EC9309;
+    font-weight: 300;
+}
+
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+}
+
+.menu {
+    width: auto;
+    position: absolute;
+    top: 45px;
+    left: 50%; /* Center the menu horizontally */
+    transform: translateX(-50%); /* Center the menu horizontally */
+    text-align: center;
+}
+
+.menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.menu-item:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth {
+    position: absolute;
+    top: 45px;
+    right: 110px;
+}
+
+.auth .menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.auth .menu-item.login:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth .menu-item.signup:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.footer-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 800px;
+    z-index: 1;
+}
+
+.footer-background {
+    width: 100%;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #494949;
+}
+
+.logo1 {
+    position: absolute;
+    top: 175px;
+    left: 169px;
+}
+
+.logo1 .primary-text {
+    color: white;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.logo1 .secondary-text {
+    color: #EC9309;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.copyright,
+.footer-links,
+.quick-links,
+.navigation-links {
+    position: absolute;
+    color: white;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.copyright {
+    top: 249px;
+    left: 576px;
+    font-size: 15px;
+}
+
+.footer-links {
+    top: 249px;
+    left: 170px;
+}
+
+.footer-links .footer-link {
+    margin-right: 20px;
+    color: white; /* Keep the text white */
+}
+
+.quick-links {
+    top: 40px;
+    left: 580px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navigation-links {
+    top: 90px;
+    left: 583px;
+}
+.footer-divider {
+    width: 100%;
+    height: 0.1px;
+    background-color: white;
+    position: absolute;
+    top: 235px; /* Adjust position as needed */
+}
+.navigation-links .nav-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-image {
+    width: 500px;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 980px;
+    z-index: 1;
+}
+
+.footer-logo {
+    width: 81px;
+    height: 82px;
+    position: absolute;
+    top: 80px;
+    left: 204px;
+}
+
+/* Pet Details Container */
+.pet-details-container {
+    margin-top: 120px; /* Adjust according to your header height */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Pet Details Card */
+/* Pet Details Card */
+.pet-details {
+    width: 1250px; /* Adjust as needed */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pet-image {
+    width: 50%; /* Adjust to occupy half of the container */
+    margin-right: 4%;
+    flex: 0 0 auto; /* Ensure image doesn't shrink or grow */
+}
+
+.pet-image img {
+    width: 100%; /* Make the image occupy the entire width of its parent */
+    height: auto;
+    border-radius: 10px;
+}
+
+.pet-info {
+    width: 45%; /* Adjust to occupy half of the container with some spacing */
+    flex: 1 0 auto; /* Allow pet details to shrink or grow */
+}
+
+.pet-info h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 54px;
+    font-weight: bold;
+}
+
+.pet-info p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.pet-description {
+    margin-top: 20px;
+}
+
+.adopt-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF7F50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.adopt-button:hover {
+    background-color: #FF6347;
+}
+.listing-container {
+    width: 100%; /* Adjusted to percentage for responsiveness */
+    max-width: 1200px; /* Added max-width for large screens */
+    margin: 0 auto; /* Center align the container */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    top:1350px;
+}
+
+.pet-card {
+    width: calc(25% - 20px); /* Adjusted width calculation for responsive cards */
+    margin-bottom: 20px; /* Adjust margin between cards */
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
+    height: 320px;
+    top:90px;
+}
+
+.heading {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.sub-heading {
+    left: 0px;
+    top: 28px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 36px;
+    word-wrap: break-word;
+}
+
+.card-overlay {
+    width: 270px;
+    height: 340px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 15px;
+}
+
+.pet-image1 {
+    width: 256.58px;
+    height: 185.42px;
+    left: 30px;
+    top: 7.22px;
+    position: absolute;
+}
+
+
+.pet-image1 img {
+    width: 256.58px;
+    height: 185.42px;
+    left: -22.73px;
+    top: 0;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.pet-details1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0px 18px;
+    top:-30px;
+}
+
+.pet-name {
+    color: #494949;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.pet-info {
+    color: #858383;
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.adopt-button {
+    width: 220px;
+    height: 28px;
+    left: 18px;
+    top: 300px;
+    position: absolute;
+    background: #EC9309;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+    color: #fff;
+}
+
+.adopt-button:hover {
+    background: #c3750c;
+}
+
+.view-more-button {
+    width: 176px;
+    height: 42px;
+    left: 1030px;
+    top: 25px;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid #EC9309; /* Updated to specify border style and width */
+    cursor: pointer;
+    background-color: transparent; /* Added transparent background */
+    color: #EC9309; /* Added text color */
+    font-size: 14px; /* Added font size */
+    font-family: Poppins; /* Added font family */
+    font-weight: 500; /* Added font weight */
+    line-height: 42px; /* Centering text vertically */
+    text-align: center; /* Centering text horizontally */
+    transition: background-color 0.3s, color 0.3s; /* Added transition for hover effect */
+}
+
+.view-more-button:hover {
+    background-color: #EC9309; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+.view-more-button-text {
+    left: 49px;
+    top: 11px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
