@@ -6,16 +6,28 @@ const petSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    age: {
+      type: Number,
+      required: true,
+    },
     breed: {
       type: String,
     },
-    image: {
+    gender: {
       type: String,
+      enum: ['Male', 'Female', 'Other'],
+      required: true,
     },
+    qualities: {
+      type: [String],
+      enum: ['Friendly', 'Playful', 'Energetic', 'Calm'],
+    }
   },
     { collection: "pets" }
 );
 
 const Pet = mongoose.model("Pet", petSchema);
+
+
 
 module.exports = Pet;
