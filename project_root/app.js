@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const userRoute = require("./routes/user.routes.js");
 const signupRoute = require("./routes/signup.routes.js");
 const petRoute = require("./routes/pet.routes.js");
+const contactRoute = require("./routes/contact.routes.js");
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/api/users", userRoute);
 app.use("/api/pets", petRoute);
 app.use("/api/signups", signupRoute);
+app.use("/api/contacts", contactRoute);
 
 app.get("/", (req, res) => {
   res.send("hello from node api");
