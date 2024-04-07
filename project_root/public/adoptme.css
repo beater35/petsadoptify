@@ -115,7 +115,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    top: 800px;
+    top: 200px;
     z-index: 1;
 }
 
@@ -238,9 +238,8 @@ body {
     justify-content: space-between;
     margin: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -266,6 +265,7 @@ body {
     margin-bottom: 10px;
     font-size: 54px;
     font-weight: bold;
+    color: #EC9309;
 }
 
 .pet-info p {
@@ -284,7 +284,7 @@ body {
     margin-top: 20px;
     border: none;
     border-radius: 5px;
-    background-color: #FF7F50;
+    background-color: #EC9309;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -295,15 +295,17 @@ body {
 .adopt-button:hover {
     background-color: #FF6347;
 }
+
+
 .listing-container {
     width: 100%; /* Adjusted to percentage for responsiveness */
-    max-width: 1200px; /* Added max-width for large screens */
+    max-width: 1250px; /* Added max-width for large screens */
     margin: 0 auto; /* Center align the container */
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    top:1350px;
+    top:50px;
 }
 
 .pet-card {
@@ -313,7 +315,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
-    height: 320px;
+    height: 345px;
     top:90px;
 }
 
@@ -342,28 +344,19 @@ body {
     word-wrap: break-word;
 }
 
-.card-overlay {
-    width: 270px;
-    height: 340px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    background: white;
-    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
-    border-radius: 15px;
-}
+
 
 .pet-image1 {
-    width: 256.58px;
+    width: 260.58px;
     height: 185.42px;
-    left: 30px;
-    top: 7.22px;
+    left: 35px;
+    top: 10px;
     position: absolute;
 }
 
 
 .pet-image1 img {
-    width: 256.58px;
+    width: 265.58px;
     height: 185.42px;
     left: -22.73px;
     top: 0;
@@ -379,7 +372,7 @@ body {
     justify-content: flex-end;
     position: relative;
     padding: 0px 18px;
-    top:-30px;
+    top:-60px;
 }
 
 .pet-name {
@@ -391,16 +384,18 @@ body {
     word-wrap: break-word;
 }
 
-.pet-info {
+.pet-info1 {
     color: #858383;
     font-size: 12px;
     font-family: Poppins;
     font-weight: 500;
     line-height: 20px;
     word-wrap: break-word;
+    top: 5px;
+    position: relative;
 }
 
-.adopt-button {
+.adopt-button-card {
     width: 220px;
     height: 28px;
     left: 18px;
@@ -419,7 +414,7 @@ body {
     color: #fff;
 }
 
-.adopt-button:hover {
+.adopt-button-card:hover {
     background: #c3750c;
 }
 
