@@ -1,19 +1,25 @@
 const mongoose = require("mongoose");
 
-// Define a Mongoose schema for the user model
-const userSchema = new mongoose.Schema(
-  {
-    email: {
+// Define the user schema
+const userSchema = new mongoose.Schema({
+  email: {
       type: String,
       required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
+      unique: true
   },
-	{ collection: "users" } // Specify the collection name in MongoDB
-);
+  username: {
+      type: String,
+      required: true
+  },
+  dob: {
+      type: Date,
+      required: true
+  },
+  password: {
+      type: String,
+      required: true
+  }
+});
 
 // Create a Mongoose model based on the schema
 const User = mongoose.model("User", userSchema);
