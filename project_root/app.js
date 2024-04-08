@@ -5,6 +5,7 @@ const userRoute = require("./routes/user.routes.js");
 const signupRoute = require("./routes/signup.routes.js");
 const petRoute = require("./routes/pet.routes.js");
 const contactRoute = require("./routes/contact.routes.js");
+const imageRoute = require("./routes/image.routes.js");
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -12,6 +13,7 @@ const app = express();
 const MONGODB_URI = process.env.MONGODB_URI;
 // Middleware
 app.use(express.json());
+app.use(bodyParser.json({ limit: '20mb' }));
 app.use(express.urlencoded({ extended: false }));
 
 
@@ -24,6 +26,7 @@ app.use("/api/users", userRoute);
 app.use("/api/pets", petRoute);
 app.use("/api/signups", signupRoute);
 app.use("/api/contacts", contactRoute);
+app.use("/api/images", imageRoute);
 
 app.get("/", (req, res) => {
   res.send("hello from node api");
