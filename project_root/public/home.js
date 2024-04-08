@@ -26,20 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Adopt Me button click event
-    document.querySelector(".adopt-button").addEventListener("click", function() {
-        // You can add your logic here for when the Adopt Me button is clicked
-        alert("You clicked Adopt Me!");
-        // Example: Redirect to a new page
-        // window.location.href = "adopt.html";
-    });
-
-    // View More button click event
-    document.querySelector(".view-more-button").addEventListener("click", function() {
-        // You can add your logic here for when the View More button is clicked
-        alert("You clicked View More!");
-        // Example: Show more pet listings
-        // window.location.href = "more_pets.html";
+    // Get all adopt buttons
+    var adoptButtons = document.querySelectorAll(".adopt-button");
+    
+    // Attach click event to each adopt button
+    adoptButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            // Redirect to adopt-button-redirect.html page
+            window.location.href = "adopt-button-redirect.html";
+        });
     });
 });
 

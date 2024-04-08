@@ -18,39 +18,51 @@
                 
                 <li><a href="#Dashboard">Dashboard</a></li>
                 <li><a href="#user-list">User List</a></li>
+                <li><a href="#messaging">Messaging</a></li>
+
             </ul>
         </div>
         <div class="main-content">
-            <section id="Dashboard">
-                <div class="dash">Admin Dashboard</div>
-
-                <h2>Upload Pet</h2>
-                <form action="#" method="POST">
-                    <div class="input-group">
-                        <label for="pet-name">Pet Name:</label>
-                        <input type="text" id="pet-name" name="pet-name" required>
+                <section id="Dashboard">
+                    <div class="dash">Admin Dashboard</div>
+                
+                    <div class="upload-pet">
+                        <div class="input-form">
+                            <h2>Upload Pet</h2>
+                            <form action="#" method="POST">
+                                <div class="input-group">
+                                    <label for="pet-name">Pet Name:</label>
+                                    <input type="text" id="pet-name" name="pet-name" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="pet-breed">Pet Breed:</label>
+                                    <input type="text" id="pet-breed" name="pet-breed" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="pet-gender">Pet Gender:</label>
+                                    <select id="pet-gender" name="pet-gender" required>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="pet-age">Pet Age:</label>
+                                    <input type="number" id="pet-age" name="pet-age" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="additional-info">Additional Information:</label>
+                                    <textarea id="additional-info" name="additional-info"></textarea>
+                                </div>
+                                <button type="submit">Post</button>
+                            </form>
+                        </div>
+                        <div class="image-upload">
+                           
+                            <input type="file" id="pet-image" name="pet-image" accept="image/*">
+                            <div class="uploaded-image" id="uploaded-image"></div>
+                            <label for="pet-image">Upload Image</label>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="pet-breed">Pet Breed:</label>
-                        <input type="text" id="pet-breed" name="pet-breed" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="pet-gender">Pet Gender:</label>
-                        <select id="pet-gender" name="pet-gender" required>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label for="pet-age">Pet Age:</label>
-                        <input type="number" id="pet-age" name="pet-age" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="additional-info">Additional Information:</label>
-                        <textarea id="additional-info" name="additional-info"></textarea>
-                    </div>
-                    <button type="submit">Upload</button>
-                </form>
                 <h2>Pet Statistics</h2>
                 <div class="stats">
                     <div class="stat">
@@ -103,6 +115,47 @@
                     </tbody>
                 </table>
             </section>
+            <section id="messaging" style="display: none;">
+                <div class="messaging-container">
+                    <div class="user-list">
+                        <h2>User List</h2>
+                        <ul class="user-names">
+                            <li class="user-name">User 1</li>
+                            <li class="user-name">User 2</li>
+                            <li class="user-name">User 3</li>
+                            <!-- Add more user names as needed -->
+                        </ul>
+                    </div>
+                    <div class="chat-box">
+                        <div class="chat-header">Chat with User</div>
+                        <div class="messages">
+                            <!-- Messages go here -->
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+
+                            <!-- Add more messages as needed -->
+                        </div>
+                        <textarea id="message-textarea" placeholder="Type your message here..."></textarea>
+                        <button id="send-message-btn">Send</button>
+                    </div>
+                </div>
+            </section>
+            
+            
             
         </div>
     </div>
@@ -119,12 +172,40 @@
             if (targetSection === '#user-list') {
                 $('#Dashboard').hide();
                 $('#user-list').show();
-            } else {
+                $('#messaging').hide();
+
+            } else if(targetSection === '#messaging') {
+                $('#user-list').hide();
+                $('#Dashboard').hide();
+                $('#messaging').show();
+            }
+            else{
                 $('#user-list').hide();
                 $('#Dashboard').show();
+                $('#messaging').hide();
             }
         });
     });
+    $(document).ready(function(){
+    // Function to display uploaded image
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#uploaded-image').css('background-image', 'url(' + e.target.result + ')');
+            }
+
+            reader.readAsDataURL(input.files[0]); // Convert to base64 string
+        }
+    }
+
+    // Event listener for file input change
+    $("#pet-image").change(function() {
+        readURL(this);
+    });
+});
+
 </script>
 
 
