@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               // console.log('User found:', foundUser);
               // User authentication successful, proceed with further actions
               // For example, redirect to another page
-              window.location.href = "home.html"; // Change "dashboard.html" to the actual URL you want to redirect to
+              window.location.href = "afterlogin.html"; // Change "dashboard.html" to the actual URL you want to redirect to
           } else {
               console.log('User not found or invalid credentials');
               // Display an error message or take appropriate action
