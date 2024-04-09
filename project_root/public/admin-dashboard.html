@@ -18,6 +18,8 @@
                 
                 <li><a href="#Dashboard">Dashboard</a></li>
                 <li><a href="#user-list">User List</a></li>
+                <li><a href="#messaging">Messaging</a></li>
+
             </ul>
         </div>
         <div class="main-content">
@@ -25,7 +27,7 @@
                 <div class="dash">Admin Dashboard</div>
 
                 <h2>Upload Pet</h2>
-                <form action="#" method="POST">
+                <form method="POST" id="pet-form">
                     <div class="input-group">
                         <label for="pet-name">Pet Name:</label>
                         <input type="text" id="pet-name" name="pet-name" required>
@@ -103,11 +105,53 @@
                     </tbody>
                 </table>
             </section>
+            <section id="messaging" style="display: none;">
+                <div class="messaging-container">
+                    <div class="user-list">
+                        <h2>User List</h2>
+                        <ul class="user-names">
+                            <li class="user-name">User 1</li>
+                            <li class="user-name">User 2</li>
+                            <li class="user-name">User 3</li>
+                            <!-- Add more user names as needed -->
+                        </ul>
+                    </div>
+                    <div class="chat-box">
+                        <div class="chat-header">Chat with User</div>
+                        <div class="messages">
+                            <!-- Messages go here -->
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+                            <div class="message received">Hello!</div>
+                            <div class="message sent">Hi there!</div>
+
+                            <!-- Add more messages as needed -->
+                        </div>
+                        <textarea id="message-textarea" placeholder="Type your message here..."></textarea>
+                        <button id="send-message-btn">Send</button>
+                    </div>
+                </div>
+            </section>
+            
+            
             
         </div>
     </div>
     <!-- Include jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="pet-listing.js"></script>
 <script>
     $(document).ready(function(){
         // Hide user list section by default
@@ -119,12 +163,40 @@
             if (targetSection === '#user-list') {
                 $('#Dashboard').hide();
                 $('#user-list').show();
-            } else {
+                $('#messaging').hide();
+
+            } else if(targetSection === '#messaging') {
+                $('#user-list').hide();
+                $('#Dashboard').hide();
+                $('#messaging').show();
+            }
+            else{
                 $('#user-list').hide();
                 $('#Dashboard').show();
+                $('#messaging').hide();
             }
         });
     });
+    $(document).ready(function(){
+    // Function to display uploaded image
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#uploaded-image').css('background-image', 'url(' + e.target.result + ')');
+            }
+
+            reader.readAsDataURL(input.files[0]); // Convert to base64 string
+        }
+    }
+
+    // Event listener for file input change
+    $("#pet-image").change(function() {
+        readURL(this);
+    });
+});
+
 </script>
 
 

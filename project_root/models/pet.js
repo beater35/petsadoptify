@@ -15,13 +15,11 @@ const petSchema = new mongoose.Schema(
     },
     gender: {
       type: String,
-      enum: ['Male', 'Female', 'Other'],
       required: true,
     },
-    qualities: {
-      type: [String],
-      enum: ['Friendly', 'Playful', 'Energetic', 'Calm'],
-    }
+    additionalInfo: {
+      type: String,
+    },
   },
     { collection: "pets" }
 );

@@ -16,7 +16,7 @@ left: 20px;
 }
 
 .footer-divider {
-    width: 100%;
+    width: 150px;
     height: 0.1px;
     background-color: white;
     position: absolute;
@@ -91,6 +91,71 @@ left: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+.upload-pet {
+    display: flex;
+}
+
+.input-form {
+    flex: 1;
+    padding-right: 20px; /* Add some space between input form and image upload */
+}
+
+.image-upload {
+    flex: 1;
+    position: relative;
+    left: 50px;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+/* Add styles for the upload image button */
+.image-upload label {
+    display: inline-block;
+    background-color: #FFD697;
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+}
+
+.image-upload label:hover {
+    background-color: #EC9309;
+}
+
+.image-upload label:active {
+    transform: translateY(2px);
+}
+
+/* Adjust position */
+.image-upload label {
+    margin-top: 10px;
+}
+
+
+.image-upload input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.uploaded-image {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+    left: 50px;
+    background-image: url('images/upload.webp'); /* Path to your default image icon */
+    border: 2px solid #ccc; /* Border style */
+}
+
+
+/* Hide input[type="file"] by default */
+.image-upload input[type="file"] {
+    display: none;
+}
+
 
 
 button {
@@ -161,4 +226,88 @@ button:hover {
 
 .user-list li:hover {
     background-color: #eaeaea;
+}
+
+.messaging-container {
+    display: flex;
+}
+
+.user-list {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.user-names {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-name {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.user-name:hover {
+    background-color: #eaeaea;
+}
+
+.chat-box {
+    flex: 2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.chat-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.messages {
+    max-height: 515px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.message {
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.received {
+    background-color: #eaeaea;
+    width: 300px;
+}
+
+.sent {
+    background-color: #FFD697;
+    width: 300px;
+    position: relative;
+    right: -500px;
+}
+
+#message-textarea {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#send-message-btn {
+    padding: 10px 20px;
+    background-color: #FFD697;
+    border: none;
+    color: #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-message-btn:hover {
+    background-color: #EC9309;
 }
