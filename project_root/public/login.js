@@ -39,5 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       } catch (error) {
           console.error('Error fetching user data:', error.message);
       }
+
+      
   });
 });

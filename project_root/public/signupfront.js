@@ -3,11 +3,41 @@ document.addEventListener('DOMContentLoaded', () => {
   
     signupForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-  
+
       const email = document.getElementById('email').value;
       const username = document.getElementById('username').value;
       const dob = document.getElementById('dob').value;
       const password = document.getElementById('password').value;
+
+      try {
+        // Fetch existing users from the backend
+        const response = await fetch('/api/users');
+        if (!response.ok) {
+            throw new Error('Failed to fetch existing users');
+        }
+        const existingUsers = await response.json();
+
+        // Check if the entered username or email already exists
+        const usernameExists = existingUsers.some(user => user.username === username);
+        const emailExists = existingUsers.some(user => user.email === email);
+
+        // If username or email already exists, throw an error
+        if (emailExists) {
+            alert('Email already exists');
+            throw new Error('Email already exists');
+        }
+
+        if (usernameExists) {
+          alert('Username already exists');
+          throw new Error('Username already exists');
+      }
+
+        // Continue with user registration if username and email are unique
+        // Code to register the user...
+        } catch (error) {
+            console.error('Error checking uniqueness:', error.message);
+            // Display error message to the user or handle it as needed
+        }
   
       try {
         const response = await fetch('/api/users', {

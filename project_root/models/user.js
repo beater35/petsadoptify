@@ -13,11 +13,9 @@ const userSchema = new mongoose.Schema({
   },
   dob: {
       type: Date,
-      required: true
   },
   password: {
       type: String,
-      required: true
   }
 });
 
