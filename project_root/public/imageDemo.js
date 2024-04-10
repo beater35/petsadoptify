@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Fetch the base64 image data from the database
         try {
             // Add the base64 image to the database
-            fetch('/api/images/66142f5829cc35b6ddc69379', {
+            fetch('/api/images/' + id + '', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json' 
