@@ -43,3 +43,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       
   });
 });
+function forgot() {
+    window.location.href = "forgot-password.html";
+}
