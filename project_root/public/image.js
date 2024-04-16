@@ -4,54 +4,88 @@ document.addEventListener('DOMContentLoaded', function() {
     const fetchImageButton = document.getElementById('fetch-image-btn');
 
     let id = '';
-    let image = ''; // Variable to store the base64 image data
-    let fetchedImage = '';
 
     imageForm.addEventListener('submit', async function(event) {
         event.preventDefault(); // Prevent default form submission
-        
-        // Create a FormData object to store the form data
-        const formData = new FormData();
-        formData.append('image', image); // Append the image data
-        
+
         try {
-            // Send a POST request to the backend to upload the image
-            image = formData;
-            const response = await fetch('/api/images', {
-                method: 'POST',
-                body: image
+            // Get the uploaded image file
+            const fileInput = document.getElementById('image');
+            const file = fileInput.files[0];
+
+            // Read the contents of the file as binary data
+            const pic = await readFileAsBinary(file);
+
+            console.log('Binary image data:', pic);
+
+            const blob = new Blob([pic], { type: 'application/octet-stream' });
+
+            // Assume 'image' contains the binary image data
+            const image = new FormData();
+            image.append('image', blob, 'image.jpg');
+
+            fetch('/api/images', {
+            method: 'POST',
+            body: image
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Image uploaded successfully!!!:', data);
-                id = data._id;
+            .then(response => {
+            if (response.ok) {
+                console.log('Image uploaded successfully');
+            } else {
+                console.error('Failed to upload image:', response.statusText);
+            }
             })
             .catch(error => {
-                console.error('Failed to upload image:', error);
-            });
-        } catch (error) {
             console.error('Error uploading image:', error);
+            });
+
+
+        } catch (error) {
+            console.error('Error reading image file:', error);
         }
     });
 
-    fetchImageButton.addEventListener('click', async function() {
+    fetchImageButton.addEventListener('click', function() {
+        // Fetch the base64 image data from the database
         try {
-            // Send a GET request to the backend to fetch the image
-            fetch(`api/images/66142f5829cc35b6ddc69379`, {
-                method: 'GET'
+            // Add the base64 image to the database
+            fetch('/api/images/' + id, {
+                method: 'GET',
             })
             .then(response => response.json())
             .then(data => {
                 console.log('Image fetched successfully!!!:', data);
                 const fetchedImage = data.image;
-                displayImage(fetchedImage);
+                if (fetchedImage) {
+                    displayImage(fetchedImage);
+                } else {
+                    console.error('No image data available.');
+                }
             })
             .catch(error => {
                 console.error('Failed to fetch image:', error);
             });
         } catch (error) {
-            console.error('Error fetching image:', error);
+            console.error('Failed to fetch image:', error);
         }
     });
+    
 
+    function readFileAsBinary(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            
+            reader.onload = function(event) {
+                // Read the contents of the file as binary data
+                const binaryData = event.target.result;
+                resolve(binaryData);
+            };
+            
+            reader.onerror = function(error) {
+                reject(error);
+            };
+            
+            reader.readAsArrayBuffer(file);
+        });
+    }    
 });

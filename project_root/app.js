@@ -14,8 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Middleware
 app.use(express.json());
 app.use(bodyParser.json({ limit: '20mb' }));
-app.use(express.urlencoded({ extended: false }));
-
+app.use(express.urlencoded({ extended: true }));
 
 
 app.use(express.static('public'));
