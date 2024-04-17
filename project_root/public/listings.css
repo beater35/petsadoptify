@@ -1,0 +1,221 @@
+/* styles.css */
+
+/* Header */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Reset the default margin */
+
+}
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999; /* Ensures the header stays on top of other content */
+}
+
+.header-bar {
+    width: 100%;
+    height: 97px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    width: 45.75px;
+    height: 46px;
+    position: absolute;
+    top: 30px;
+    left: 110px;
+}
+
+.brand {
+    width: auto;
+    position: absolute;
+    top: 40px;
+    left: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.brand span {
+    font-size: 24px;
+    font-family: Poppins;
+    line-height: 24px;
+    word-wrap: break-word;
+    margin: 0; /* Reset margin */
+}
+
+.brand .brand-name {
+    color: black;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.brand .brand-subtitle {
+    color: #EC9309;
+    font-weight: 300;
+}
+
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+}
+
+.menu {
+    width: auto;
+    position: absolute;
+    top: 45px;
+    left: 50%; /* Center the menu horizontally */
+    transform: translateX(-50%); /* Center the menu horizontally */
+    text-align: center;
+}
+
+.menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.menu-item:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth {
+    position: absolute;
+    top: 45px;
+    right: 110px;
+}
+
+.auth .menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.auth .menu-item.login:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth .menu-item.signup:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.footer-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 1830px;
+}
+
+.footer-background {
+    width: 100%;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #494949;
+}
+
+.logo1 {
+    position: absolute;
+    top: 175px;
+    left: 169px;
+}
+
+.logo1 .primary-text {
+    color: white;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.logo1 .secondary-text {
+    color: #EC9309;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.copyright,
+.footer-links,
+.quick-links,
+.navigation-links {
+    position: absolute;
+    color: white;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.copyright {
+    top: 249px;
+    left: 576px;
+    font-size: 15px;
+}
+
+.footer-links {
+    top: 249px;
+    left: 170px;
+}
+
+.footer-links .footer-link {
+    margin-right: 20px;
+    color: white; /* Keep the text white */
+}
+
+.quick-links {
+    top: 40px;
+    left: 580px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navigation-links {
+    top: 90px;
+    left: 583px;
+}
+.footer-divider {
+    width: 100%;
+    height: 0.1px;
+    background-color: white;
+    position: absolute;
+    top: 235px; /* Adjust position as needed */
+}
+.navigation-links .nav-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-image {
+    width: 500px;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 980px;
+    z-index: 1;
+}
+
+.footer-logo {
+    width: 81px;
+    height: 82px;
+    position: absolute;
+    top: 80px;
+    left: 204px;
+}
