@@ -64,7 +64,7 @@ const deleteUser = async (req, res) => {
 
 const deleteAll = async (req, res) => {
     try {
-        const result = await YourModel.deleteMany({});
+        const result = await User.deleteMany({});
 
         // Check if any documents were deleted
         if (result.deletedCount > 0) {
@@ -84,5 +84,6 @@ module.exports = {
     getUser,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    deleteAll
 }

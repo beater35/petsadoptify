@@ -6,6 +6,8 @@ const signupRoute = require("./routes/signup.routes.js");
 const petRoute = require("./routes/pet.routes.js");
 const contactRoute = require("./routes/contact.routes.js");
 const imageRoute = require("./routes/image.routes.js");
+const adminRoute = require("./routes/admin.routes.js");
+
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -26,6 +28,7 @@ app.use("/api/pets", petRoute);
 app.use("/api/signups", signupRoute);
 app.use("/api/contacts", contactRoute);
 app.use("/api/images", imageRoute);
+app.use("/api/admin", adminRoute);
 
 app.get("/", (req, res) => {
   res.send("hello from node api");
