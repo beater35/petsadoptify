@@ -4,6 +4,8 @@
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin */
+    font-family: 'Poppins', Arial, sans-serif;
+
 
 }
 .header {
