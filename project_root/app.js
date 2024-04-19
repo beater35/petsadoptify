@@ -9,6 +9,8 @@ const imageRoute = require("./routes/image.routes.js");
 const bodyParser = require('body-parser');
 const app = express();
 
+// const authRoutes = require('./routes/authRoutes.js');
+
 
 const MONGODB_URI = process.env.MONGODB_URI;
 // Middleware
@@ -27,6 +29,8 @@ app.use("/api/pets", petRoute);
 app.use("/api/signups", signupRoute);
 app.use("/api/contacts", contactRoute);
 app.use("/api/images", imageRoute);
+
+// app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("hello from node api");
