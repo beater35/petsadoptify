@@ -62,10 +62,28 @@ const deleteUser = async (req, res) => {
     }
 }
 
+const deleteAll = async (req, res) => {
+    try {
+        const result = await User.deleteMany({});
+
+        // Check if any documents were deleted
+        if (result.deletedCount > 0) {
+            // If documents were deleted, return a success message
+            res.status(200).json({ message: `${result.deletedCount} documents deleted successfully` });
+        } else {
+            // If no documents were deleted, return a message indicating that there were no documents to delete
+            res.status(404).json({ message: 'No documents found to delete' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
 module.exports = {
     getUsers,
     getUser,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    deleteAll
 }
