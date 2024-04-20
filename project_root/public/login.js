@@ -43,6 +43,38 @@ document.addEventListener('DOMContentLoaded', async () => {
       
   });
 });
-function forgot() {
-    window.location.href = "forgot-password.html";
-}
+
+// JavaScript code in your frontend
+function sendForgotPasswordEmail() {
+    const email = document.getElementById('email').value;
+    fetchForgotPasswordEmail(email);
+  }
+  
+  async function fetchForgotPasswordEmail(email) {
+    try {
+      const response = await fetch('/api/auth/forgot-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+  
+      if (!response.ok) {
+        // Handle non-successful responses
+        const errorMessage = await response.text();
+        throw new Error(`Failed to send forgot password email: ${errorMessage}`);
+      }
+  
+      const data = await response.json();
+      if (data.success) {
+        alert('Forgot password email sent successfully');
+      } else {
+        alert('Failed to send forgot password email');
+      }
+    } catch (error) {
+      console.error('Error:', error.message);
+      alert('An error occurred. Please try again later.');
+    }
+  }
+  

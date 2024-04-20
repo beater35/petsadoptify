@@ -46,10 +46,11 @@
         <form method = "post" id = "login-form">
         <div class="input-container">
             <div class="label">Email:</div>
-            <input type="email" class="input" id="email" name = "email" placeholder="Enter a valid email.">
+            <input type="email" class="input" id="email" name="email" placeholder="Enter a valid email.">
             <div class="label">Password:</div>
             <input type="password" class="input" id="password" name = "password" placeholder="Password">
-            <div class="forgot-password" onclick="forgot()" >Forgot Password?</div>
+            <div class="forgot-password" onclick="sendForgotPasswordEmail()">Forgot Password?</div>
+
         </div>
     
         <button type="submit" class="register-button loginbtn" >Login</button>
