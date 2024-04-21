@@ -43,6 +43,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       
   });
 });
+// After successful login
+const email = document.getElementById('email').value;
+localStorage.setItem('loggedInEmail', email);
+
 
 // JavaScript code in your frontend
 function sendForgotPasswordEmail() {
