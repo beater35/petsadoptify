@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       event.preventDefault();
 
       const email = document.getElementById('email').value;
+
+     // Store the email in local storage
+      localStorage.setItem('loggedInEmail', email);
+
       const password = document.getElementById('password').value;
       console.log(email, password);
 
@@ -40,6 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           console.error('Error fetching user data:', error.message);
       }
 
+
+      
       
   });
 });

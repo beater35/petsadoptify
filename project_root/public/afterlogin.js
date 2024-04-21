@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
 //search
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
@@ -25,12 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-  // Fetch the email value from the login page
-  const email = localStorage.getItem('loggedInEmail');
-  // Update the content of the mail class with the fetched email
-  document.querySelector('.mail').textContent = email;
+document.addEventListener('DOMContentLoaded', () => {
+    // Fetch the email value from the local storage
+    const email = localStorage.getItem('loggedInEmail');
+    
+    // Update the content of the mail class with the fetched email
+    const mailElement = document.querySelector('.mail');
+    mailElement.textContent = email;
+});
 
-  
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     // Get all adopt buttons
     var adoptButtons = document.querySelectorAll(".adopt-button");
