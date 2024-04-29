@@ -4,6 +4,7 @@
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin */
+    font-family: 'Poppins', sans-serif;
 
 }
 .header {
@@ -116,7 +117,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    top: 1830px;
+    top: 330px;
 }
 
 .footer-background {
@@ -218,4 +219,232 @@ body {
     position: absolute;
     top: 80px;
     left: 204px;
+}
+
+.register-title {
+    width: 356px;
+    height: 104px;
+    left: 110px;
+    top: 120px;
+    position: absolute;
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.welcome-message {
+    height: 34px;
+    left: 110px;
+    top: 200px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between dropdowns */
+    top: 150px;
+    left: 1110px;
+}
+.dropdown-btn {
+    background-color: #ffffff; /* Dropdown button background color */
+    color: #EC9309;
+    padding: 10px 15px;
+    border: 2px solid #EC9309; /* Set border width and color */
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-btn:hover {
+    background-color: #EC9309; /* Change background color on hover */
+    color: #ffffff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Change background color on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.listing-container {
+    width: 100%; /* Adjusted to percentage for responsiveness */
+    max-width: 1300px; /* Added max-width for large screens */
+    margin: 0 auto; /* Center align the container */
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    top:150px;
+}
+
+.pet-card {
+    width: calc(25% - 20px); /* Adjusted width calculation for responsive cards */
+    margin-bottom: 20px; /* Adjust margin between cards */
+    position: relative;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
+    height: 345px;
+    top:90px;
+}
+
+.card-overlay {
+    width: 270px;
+    height: 340px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 15px;
+}
+
+.pet-image {
+    width: 275.58px;
+    height: 185.42px;
+    left: 30px;
+    top: 7.22px;
+    position: absolute;
+}
+
+
+.pet-image img {
+    width: 285.58px;
+    height: 185.42px;
+    left: -18.73px;
+    top: 0;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.pet-details {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0px 18px;
+    top:-55px;
+}
+
+.pet-name {
+    color: #494949;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.pet-info {
+    color: #858383;
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+
+.adopt-button {
+    width: 220px;
+    height: 28px;
+    left: 18px;
+    top: 300px;
+    position: absolute;
+    background: #EC9309;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+    color: #fff;
+}
+
+.adopt-button:hover {
+    background: #c3750c;
+}
+/* Search Bar */
+.search-bar {
+    position: absolute;
+    top: 150px;
+    left: 830px; /* Adjust the position as needed */
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: 2px solid #EC9309;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #858383; /* Placeholder text color */
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #FF7F50; /* Border color on focus */
+}
+
+.search-bar .search-btn img {
+    width: 20px; /* Adjust the width to your preference */
+    height: 20px; /* Adjust the height to your preference */
+}
+
+
+.searchButton:hover {
+    background: #FF7F50; /* Background color on hover */
+}
+
+.search-bar button {
+    width: 40px;
+    height: 40px;
+    margin-left: 0px;
+    background-color: #e1dfdb;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-bar button img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: auto;
 }
