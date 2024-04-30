@@ -1,4 +1,4 @@
-Warning: This is an incomplete README file. Needs further changes.
+![Alert](alert-icon.png) **Important** : This is an incomplete README file. Needs further changes.
 
 Below is a basic template for a README file for the PetsAdoptify project:
 
