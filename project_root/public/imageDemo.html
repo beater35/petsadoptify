@@ -6,18 +6,17 @@
     <title>Image</title>
 </head>
 <body>
-    <form id="image-form">
-        <label for="image">Select image:</label><br>
-        <input type="file" id="image" name="image" accept="image/*"><br>
-        <button type="submit">Submit</button>
+    <form class="form file-form">
+        <div class="form-row">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" id="image" accept="image/*" >
+        </div>
+        
+        <button type="submit" class="btn btn-block">add product</button>
     </form>
+    <section class="container">
+    </section>
 
-    <div id="image-display">
-        <!-- Space to display the image -->
-    </div>
-
-    <button id="fetch-image-btn">Fetch Image</button>
-    
     <script src="image.js"></script>
 </body>
 </html>

@@ -25,7 +25,7 @@ const getUser = async (req, res) => {
 const createUser = async (req, res) => {
 	try {
 		const user = await User.create(req.body);
-		res.status(201).json(user);
+		res.status(201).json({ user, token });
 	} catch (error) {
 		res.status(500).json({message: error.message});
 	}

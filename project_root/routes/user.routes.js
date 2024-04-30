@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require('bcrypt');
 const User = require('../models/user.js');
-const Signup = require('../models/signup.js'); // Import the Signup model
+const Signup = require('../models/signup.js');
 const { getUsers, getUser, createUser, updateUser, deleteUser, deleteAll } = require('../controllers/user.controller.js');
 const { createSignup, updateSignup} = require('../controllers/signupuser.controller.js');
 
