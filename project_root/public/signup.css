@@ -275,7 +275,8 @@ word-wrap: break-word
     border: 1px solid #ffffff;
     border-radius: 5px;
     color: rgba(0, 0, 0,); font-size: 14px; font-family: Poppins;
-    opacity: 0.50; background: #FFD697;
+    opacity: 0.80; background: #FFD697;
+    z-index: 999;
 }
 
 .footer-section {

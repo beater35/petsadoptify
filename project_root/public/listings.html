@@ -6,7 +6,7 @@
     <title>Listings</title>
     <link rel="stylesheet" type="text/css" href="listings.css">
     <link rel="icon" type="image/png" href="images/logo.png">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-lPLOR6LclWVQv3JPpNG8vbq09GPfJ+lc7K1L+OKJicB+q2M4iI1k5hiGniMhY6kBuW8vRyy+0LKJ/pXHvTtsmA==" crossorigin="anonymous">
 
 </head>
 <body>
@@ -31,7 +31,206 @@
         </div>
     </div>
         
+    <div class="register-title">Adopt a pet!</div>
+    <div class="welcome-message">Welcome your new family member home.</div>
+   
+    <div class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button class="searchButton"><img src="images/search-icon.png" alt="Search"></button>
+</div>
 
+    
+
+     <!-- Breed Dropdown -->
+     <div class="dropdown">
+        <button class="dropdown-btn" onclick="showDropdownOption('breed')">Breed</button>
+        <div class="dropdown-content" id="breed-dropdown">
+            <!-- Your breed options here -->
+            <a href="#" onclick="setDropdownOption('breed', this)">Option 1</a>
+            <a href="#" onclick="setDropdownOption('breed', this)">Option 2</a>
+            <a href="#" onclick="setDropdownOption('breed', this)">Option 3</a>
+        </div>
+    </div>
+
+    <!-- Age Dropdown -->
+    <div class="dropdown">
+        <button class="dropdown-btn" onclick="showDropdownOption('age')">Age</button>
+        <div class="dropdown-content" id="age-dropdown">
+            <!-- Your age options here -->
+            <a href="#" onclick="setDropdownOption('age', this)">1-3</a>
+            <a href="#" onclick="setDropdownOption('age', this)">3-6</a>
+            <a href="#" onclick="setDropdownOption('age', this)">6-9</a>
+        </div>
+    </div>
+
+    <!-- Gender Dropdown -->
+    <div class="dropdown">
+        <button class="dropdown-btn" onclick="showDropdownOption('gender')">Gender</button>
+        <div class="dropdown-content" id="gender-dropdown">
+            <!-- Your gender options here -->
+            <a href="#" onclick="setDropdownOption('gender', this)">Male</a>
+            <a href="#" onclick="setDropdownOption('gender', this)">Female</a>
+            <a href="#" onclick="setDropdownOption('gender', this)">Others</a>
+        </div>
+    </div>
+    <div class="listing-container">
+       
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+    
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+    
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+    
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            
+            
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+    
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+    
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+    
+        <div class="pet-card">
+            <div class="pet-image">
+                <img src="images/golden.png" alt="Pet Image" />
+            </div>
+            <div class="pet-details">
+                <div class="pet-name">Shere The Dog</div>
+                <div class="pet-info">
+                    <span>Breed: </span><span>Golden Retriever</span>
+                </div>
+                <div class="pet-info">
+                    <span>Gender: </span><span>Female</span>
+                </div>
+                <div class="pet-info">
+                    <span>Age: </span><span>1.5 Years</span>
+                </div>
+            </div>
+            
+            
+            <div class="adopt-button">Adopt Me</div>
+        </div>
+       
+    </div>
 
     <div class="footer-section">
         <div class="footer-background"></div>
@@ -54,6 +253,6 @@
         <img src="images/logo.png" alt="Footer Logo" class="footer-logo">
         <div class="footer-divider"></div>
     </div>
-    <script src="login.js"></script>
+    <script src="listings.js"></script>
 </body>
 </html>
