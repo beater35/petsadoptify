@@ -38,3 +38,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+/// Add this JavaScript to make the testimonial cards scroll smoothly by 200px every 3 seconds
+
+const testimonialContainer = document.querySelector('.testimonial-cards-container');
+const scrollAmount = 300; // Scroll amount in pixels
+const scrollInterval = 3000; // Interval in milliseconds (3 seconds)
+
+function scrollTestimonials() {
+    const currentScroll = testimonialContainer.scrollLeft;
+    const targetScroll = currentScroll + scrollAmount;
+
+    // Scroll smoothly to the target position
+    testimonialContainer.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+    });
+
+    // Reset scroll position to start when reached the end
+    if (targetScroll >= testimonialContainer.scrollWidth - testimonialContainer.clientWidth) {
+        testimonialContainer.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Scroll testimonials automatically every 3 seconds
+setInterval(scrollTestimonials, scrollInterval);
