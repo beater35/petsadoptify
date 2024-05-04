@@ -63,5 +63,37 @@ function scrollTestimonials() {
     }
 }
 
+
+
+// async function getPets() {
+//   try {
+//     const response = await fetch('/api/pets');
+//     const pets = await response.json();
+//     displayPets(pets);
+//   } catch (error) {
+//     console.error('Error:', error);
+//   }
+// }
+
+// function displayPets(pets) {
+//   const petList = document.getElementById('petList');
+//   pets.forEach(pet => {
+//     const petElement = document.createElement('div');
+//     petElement.innerHTML = `
+//       <h2>${pet.name}</h2>
+//       <p>Age: ${pet.age}</p>
+//       <p>Breed: ${pet.breed}</p>
+//       <p>Gender: ${pet.gender}</p>
+//       <img src="${pet.image}" alt="${pet.name}">
+//       <p>${pet.additionalInfo}</p>
+//     `;
+//     petList.appendChild(petElement);
+//   });
+// }
+
+// // Fetch pets when the page loads
+// window.onload = getPets;
+
 // Scroll testimonials automatically every 3 seconds
+
 setInterval(scrollTestimonials, scrollInterval);
