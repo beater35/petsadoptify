@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             breed: pet.breed,
             gender: pet.gender,
             age: pet.age,
+            description: pet.additionalInfo,
             image: pet.image
         };
     

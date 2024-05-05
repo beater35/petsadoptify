@@ -36,13 +36,16 @@
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
     // Retrieve pet details from Local Storage
     const petDetails = JSON.parse(localStorage.getItem('selectedPet'));
 
     // Get the container where pet details will be displayed
-    const petDetailsContainer = document.querySelector('.pet-details');
+    const petDetailsContainer = document.querySelector('.pet-details-container');
+
+    // Create a new div to hold each pet details
+    const petDetailsDiv = document.createElement('div');
+    petDetailsDiv.classList.add('pet-details');
 
     // Create and set pet image element
     const petImageDiv = document.createElement('div');
@@ -65,14 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
     age.innerHTML = `<strong>Age:</strong> ${petDetails.age} Years`;
     const description = document.createElement('div');
     description.classList.add('pet-description');
-    description.innerHTML = `<p><strong>Description:</strong><br>${petDetails.additionalInfo}</p>`;
+    description.innerHTML = `<p><strong>Description:</strong><br>${petDetails.description}</p>`;
 
     // Create and set adopt button
     const adoptButton = document.createElement('button');
     adoptButton.classList.add('adopt-button');
     adoptButton.textContent = 'Adopt Me';
 
-    // Append all elements to pet details container
+    // Append all elements to pet details div
     petInfoDiv.appendChild(petName);
     petInfoDiv.appendChild(breed);
     petInfoDiv.appendChild(gender);
@@ -80,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
     petInfoDiv.appendChild(description);
     petInfoDiv.appendChild(adoptButton);
 
-    petDetailsContainer.appendChild(petImageDiv);
-    petDetailsContainer.appendChild(petInfoDiv);
+    petDetailsDiv.appendChild(petImageDiv);
+    petDetailsDiv.appendChild(petInfoDiv);
+
+    // Append the pet details div to the pet details container
+    petDetailsContainer.appendChild(petDetailsDiv);
 });
