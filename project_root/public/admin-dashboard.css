@@ -41,6 +41,7 @@ left: 20px;
     background-color: #494949;
     color: #fff;
     padding: 20px;
+    min-height: 705px;    
 }
 
 .sidebar h1 {
@@ -175,139 +176,51 @@ button:hover {
 }
 
 
-.stats {
-    display: flex;
-    justify-content: space-between;
-}
-
-.stat {
-     background: #FFD697;    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-.stat1 {
-    background: #FFD697;
-    position: relative;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    left: -700px;
-}
-
-/* Add a class to style the table */
-.user-table {
+#contactTable {
     width: 100%;
     border-collapse: collapse;
-}
-
-.user-table th, .user-table td {
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  #contactTable th, #contactTable td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-}
-
-.user-table th {
+  }
+  
+  #contactTable th {
+    background-color: #f2f2f2; /* Light gray background for header */
+  }
+  
+  #contactTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+  }
+  
+  #contactTable tbody tr:hover {
+    background-color: #ddd; /* Hover color */
+  }
+  
+  #applicationsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #applicationsTable th, #applicationsTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #applicationsTable th {
     background-color: #f2f2f2;
-}
-
-/* Add a class to style the visible state */
-.user-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.user-list li {
+  }
+  
+  #applicationsTable tbody tr:nth-child(even) {
     background-color: #f2f2f2;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.user-list li:hover {
-    background-color: #eaeaea;
-}
-
-.messaging-container {
-    display: flex;
-}
-
-.user-list {
-    flex: 1;
-    padding-right: 20px;
-}
-
-.user-names {
-    list-style-type: none;
-    padding: 0;
-}
-
-.user-name {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f2f2f2;
-    margin-bottom: 5px;
-    border-radius: 4px;
-}
-
-.user-name:hover {
-    background-color: #eaeaea;
-}
-
-.chat-box {
-    flex: 2;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 20px;
-}
-
-.chat-header {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.messages {
-    max-height: 515px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
-
-.message {
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-}
-
-.received {
-    background-color: #eaeaea;
-    width: 300px;
-}
-
-.sent {
-    background-color: #FFD697;
-    width: 300px;
-    position: relative;
-    right: -500px;
-}
-
-#message-textarea {
-    width: calc(100% - 40px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#send-message-btn {
-    padding: 10px 20px;
-    background-color: #FFD697;
-    border: none;
-    color: #000000;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#send-message-btn:hover {
-    background-color: #EC9309;
-}
+  }
+  
+  #applicationsTable tbody tr:hover {
+    background-color: #ddd;
+  }
+  

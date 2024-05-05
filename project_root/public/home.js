@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /// Add this JavaScript to make the testimonial cards scroll smoothly by 200px every 3 seconds
 
 const testimonialContainer = document.querySelector('.testimonial-cards-container');
-const scrollAmount = 300; // Scroll amount in pixels
+const scrollAmount = 250; // Scroll amount in pixels
 const scrollInterval = 3000; // Interval in milliseconds (3 seconds)
 
 function scrollTestimonials() {
