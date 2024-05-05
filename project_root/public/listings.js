@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Store the pet data in local storage
         localStorage.setItem('selectedPet', JSON.stringify(petData));
     
-        // Redirect the user to another page
-        window.location.href = '/adopt-me-page'; // Replace with the URL of the target page
+          // Redirect the user to another page
+        window.location.href = 'adopt-button-redirect.html'; 
     });
 
 
