@@ -17,7 +17,8 @@
             <ul>
                 
                 <li><a href="#Dashboard">Dashboard</a></li>
-                <li><a href="#user-list">User List</a></li>
+                <li><a href="#contact-info">Inquiries</a></li>
+                <li><a href="#applications">Applications</a></li> <!-- Add link to the new section -->
 
             </ul>
         </div>
@@ -63,58 +64,43 @@
                     </div>
                 </div>
                 </form>
-                <h2>Pet Statistics</h2>
-                <div class="stats">
-                    <div class="stat">
-                        <h3>Total Adopted Pets:</h3>
-                        <p>25</p>
-                    </div>
-                    <div class="stat1">
-                        <h3>Total Posted Pets:</h3>
-                        <p>50</p>
-                    </div>
-                </div>
+               
             </section>
-            <section id="user-list" style="display: none;"> <!-- Add inline style to hide by default -->
-                <h2>User List</h2>
-                <table class="user-table"> <!-- Change from ul to table -->
+            <section id="contact-info" style="display: none;">
+                <h2>Contact inquiries</h2>
+                <table id="contactTable">
                     <thead>
                         <tr>
+                            <th>Name</th>
+                            <th>Address</th>
                             <th>Email</th>
-                            <th>Password</th>
-                            <th>Username</th>
-                            <th>Date of Birth</th>
+                            <th>Message</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>user1@example.com</td>
-                            <td>********</td>
-                            <td>User1</td>
-                            <td>1990-01-01</td>
-                        </tr>
-                        <tr>
-                            <td>user1@example.com</td>
-                            <td>********</td>
-                            <td>User1</td>
-                            <td>1990-01-01</td>
-                        </tr>
-                        <tr>
-                            <td>user1@example.com</td>
-                            <td>********</td>
-                            <td>User1</td>
-                            <td>1990-01-01</td>
-                        </tr>
-                        <tr>
-                            <td>user1@example.com</td>
-                            <td>********</td>
-                            <td>User1</td>
-                            <td>1990-01-01</td>
-                        </tr>
-                        <!-- Add more rows for additional users here -->
+                        <!-- Table body will be populated dynamically -->
                     </tbody>
                 </table>
             </section>
+            <section id="applications" style="display: none;"> <!-- New section for applications -->
+                <h2>Applications</h2>
+                <table id="applicationsTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Occupation</th>
+                            <th>Adopt Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table body will be populated dynamically -->
+                    </tbody>
+                </table>
+            </section>
+            
            
             
             
@@ -131,14 +117,22 @@
         // Toggle visibility of sections when their respective links are clicked
         $('li a').click(function(){
             var targetSection = $(this).attr('href');
-            if (targetSection === '#user-list') {
+            if (targetSection === '#contact-info') {
                 $('#Dashboard').hide();
-                $('#user-list').show();
+                $('#contact-info').show();
+                $('#applications').hide();
 
            
             }
+            else if(targetSection === '#applications'){
+                $('#Dashboard').hide();
+                $('#contact-info').hide();
+                $('#applications').show();
+
+            }
             else{
-                $('#user-list').hide();
+                $('#contact-info').hide();
+                $('#applications').hide();
                 $('#Dashboard').show();
             }
         });
