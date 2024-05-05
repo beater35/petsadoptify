@@ -293,67 +293,47 @@ body {
     display: block;
 }
 
-
-.listing-container {
-    width: 100%; /* Adjusted to percentage for responsiveness */
-    max-width: 1300px; /* Added max-width for large screens */
-    margin: 0 auto; /* Center align the container */
+#listing-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    top:150px;
+    top: 250px; /* Adjusted top position */
 }
 
+/* Assuming each pet card has a fixed width */
 .pet-card {
     width: calc(25% - 20px); /* Adjusted width calculation for responsive cards */
     margin-bottom: 20px; /* Adjust margin between cards */
-    position: relative;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
-    height: 345px;
-    top:90px;
+    height: 380px;
+    position: relative;
 }
 
-.card-overlay {
-    width: 270px;
-    height: 340px;
-    left: 0px;
-    top: 0px;
-    position: absolute;
-    background: white;
-    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
-    border-radius: 15px;
-}
 
 .pet-image {
-    width: 275.58px;
-    height: 185.42px;
-    left: 30px;
-    top: 7.22px;
-    position: absolute;
+    width: 100%;
+    height: 60%; /* Adjust the height as needed */
+    position: relative;
+    overflow: hidden;
 }
 
-
 .pet-image img {
-    width: 285.58px;
-    height: 185.42px;
-    left: -18.73px;
-    top: 0;
-    position: absolute;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 15px 15px 0 0; /* Adjust border-radius to match pet-card */
 }
 
 .pet-details {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
-    padding: 0px 18px;
-    top:-55px;
+    padding-left: 20px;
+    padding-top: 10px;
+    top: 50px;
 }
 
 .pet-name {
@@ -361,7 +341,7 @@ body {
     font-size: 20px;
     font-family: Poppins;
     font-weight: 600;
-    line-height: 20px;
+    line-height: 35px;
     word-wrap: break-word;
 }
 
@@ -370,15 +350,23 @@ body {
     font-size: 12px;
     font-family: Poppins;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 18px;
     word-wrap: break-word;
 }
 
+/* Flex container */
+#listing-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to new line */
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+
 .adopt-button {
-    width: 220px;
+    width: 270px;
     height: 28px;
     left: 18px;
-    top: 300px;
+    top: 340px;
     position: absolute;
     background: #EC9309;
     border-radius: 20px;
