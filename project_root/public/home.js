@@ -101,6 +101,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             adoptButton.classList.add('adopt-button');
             adoptButton.textContent = 'Adopt Me';
 
+            adoptButton.addEventListener('click', () => {
+                // Retrieve the specific data of the clicked pet
+                const petData = {
+                    name: pet.name,
+                    breed: pet.breed,
+                    gender: pet.gender,
+                    age: pet.age,
+                    description: pet.additionalInfo,
+                    image: pet.image
+                };
+            
+                // Store the pet data in local storage
+                localStorage.setItem('selectedPet', JSON.stringify(petData));
+            
+                  // Redirect the user to another page
+                window.location.href = 'adopt-button-redirect.html'; 
+            });
+            
             // Append the "Adopt Me" button to the pet card container
             petCard.appendChild(petImage);
             petCard.appendChild(petDetails);
