@@ -24,7 +24,23 @@ document.addEventListener('DOMContentLoaded', async () => {
           const petName = document.createElement('div');
           petName.classList.add('pet-name');
           petName.textContent = pet.name;
+
+          const petBreed = document.createElement('div');
+          petBreed.classList.add('pet-info');
+          petBreed.textContent = 'Breed: ' + pet.breed; // Assuming pet.breed holds the breed information
+
+          const petGender = document.createElement('div');
+          petGender.classList.add('pet-info');
+          petGender.textContent = 'Gender: ' + pet.gender; // Assuming pet.gender holds the gender information
+
+          const petAge = document.createElement('div');
+          petAge.classList.add('pet-info');
+          petAge.textContent = 'Age: ' + pet.age + ' Years'; // Assuming pet.age holds the age information
+
           petDetails.appendChild(petName);
+          petDetails.appendChild(petBreed);
+          petDetails.appendChild(petGender);
+          petDetails.appendChild(petAge);
 
           // Append the pet image and details to the pet card container
           petCard.appendChild(petImage);
@@ -42,5 +58,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   .catch(error => {
       console.error('Error fetching pet data:', error);
   });
+    document.getElementById('search-btn').addEventListener('click', () => {
+        // Retrieve the search query from the input field
+        const query = document.querySelector('.search-bar input[type="text"]').value;
 
+        // Do something with the search query, like performing a search
+        console.log('Search query:', query);
+
+
+    });
 });

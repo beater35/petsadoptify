@@ -1,10 +1,47 @@
 const Pet = require('../models/pet');
 
 // Read pets
+// const getPets = async (req, res) => {
+//     try {
+//         const pets = await Pet.find({});
+//         res.status(200).json(pets);
+//     } catch (error) {
+//         res.status(500).json({ message: error.message });
+//     }
+// }
+
+// Filter pets
 const getPets = async (req, res) => {
     try {
-        const pets = await Pet.find({});
-        res.status(200).json(pets);
+        const { name, breed, age, gender } = req.query;
+        const queryObject = {};
+
+        if (name) {
+            queryObject.name = { $regex: name, $options: 'i' };
+        }
+
+        if (breed) {
+            queryObject.breed = { $regex: breed, $options: 'i' };
+        }
+
+        if (gender) {
+            queryObject.gender = { $regex: gender, $options: 'i' };
+        }
+
+        if (age) {
+            const ageRange = age.split('-'); // Split the age string by '-'
+            if (ageRange.length === 2) { // Check if it's a valid age range
+                const minAge = parseInt(ageRange[0]); // Extract the minimum age
+                const maxAge = parseInt(ageRange[1]); // Extract the maximum age
+                if (!isNaN(minAge) && !isNaN(maxAge)) { // Check if both minAge and maxAge are valid numbers
+                    queryObject.age = { $gte: minAge, $lte: maxAge }; // Construct the age query
+                }
+            }
+        }
+
+        const pets = await Pet.find(queryObject);
+
+        res.status(200).json( pets );
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

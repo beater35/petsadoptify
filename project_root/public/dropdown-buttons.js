@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("the dropdown js script is working!")
     function setDropdownOption(dropdownId, option) {
         document.getElementById(dropdownId + '-dropdown').previousElementSibling.textContent = option.textContent;
-    }
-
+    }          
     function showDropdownOption(dropdownId) {
         document.getElementById(dropdownId + '-dropdown').classList.toggle('show');
     }
@@ -29,13 +29,4 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = "adopt-button-redirect.html";
             });
         });
-    document.getElementById("search-btn").addEventListener("click", function() {
-        alert("Search button clicked");
-        // Retrieve the search query from the input field
-        var query = document.querySelector(".search-bar input[type='text']").value;
-
-        // Do something with the search query, like performing a search
-        console.log("Search query:", query);
-        // Here you can add your logic to perform the search or submit the form
-    });
 });
