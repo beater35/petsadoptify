@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const {getPets, getPetsByBreed, createPet, updatePet, deletePet} = require("../controllers/pet.controller.js");
+const { get8Pets, getPets, getPetsByBreed, createPet, updatePet, deletePet} = require("../controllers/pet.controller.js");
+
+// Get 8 pets
+router.get('/home', get8Pets);
 
 // Get pets
 router.get('/', getPets);

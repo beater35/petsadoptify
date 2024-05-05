@@ -1,14 +1,14 @@
 const Pet = require('../models/pet');
 
-// Read pets
-// const getPets = async (req, res) => {
-//     try {
-//         const pets = await Pet.find({});
-//         res.status(200).json(pets);
-//     } catch (error) {
-//         res.status(500).json({ message: error.message });
-//     }
-// }
+// Read 8 pets
+const get8Pets = async (req, res) => {
+    try {
+        const pets = await Pet.find({}).limit(8);
+        res.status(200).json(pets);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
 
 // Filter pets
 const getPets = async (req, res) => {
@@ -100,6 +100,7 @@ const deletePet = async (req, res) => {
 }
 
 module.exports = {
+    get8Pets,
     getPets,
     getPetsByBreed,
     createPet,

@@ -8,18 +8,18 @@
     <link rel="icon" type="image/png" href="images/logo.png">
     <script>
         document.addEventListener("DOMContentLoaded", async () => {
-            // Function to show dropdown options
-            function showDropdownOption(dropdownId) {
-                var dropdownContent = document.getElementById(dropdownId + "-dropdown");
-                dropdownContent.classList.toggle("show");
-            }
-
             // Function to set selected dropdown option
             function setDropdownOption(dropdownId, option) {
                 var selectedOption = option.innerText;
                 var dropdownBtn = document.querySelector("#" + dropdownId + "-dropdown + .dropdown-btn");
                 dropdownBtn.innerText = selectedOption;
                 hideDropdownOptions();
+            }
+            
+            // Function to show dropdown options
+            function showDropdownOption(dropdownId) {
+                var dropdownContent = document.getElementById(dropdownId + "-dropdown");
+                dropdownContent.classList.toggle("show");
             }
 
             // Function to hide dropdown options
@@ -109,161 +109,6 @@
 
 
     <div id="listing-container">       
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-    
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-    
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-    
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            
-            
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-    
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-    
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-    
-        <div class="pet-card">
-            <div class="pet-image">
-                <img src="images/golden.png" alt="Pet Image" />
-            </div>
-            <div class="pet-details">
-                <div class="pet-name">Shere The Dog</div>
-                <div class="pet-info">
-                    <span>Breed: </span><span>Golden Retriever</span>
-                </div>
-                <div class="pet-info">
-                    <span>Gender: </span><span>Female</span>
-                </div>
-                <div class="pet-info">
-                    <span>Age: </span><span>1.5 Years</span>
-                </div>
-            </div>
-            
-            
-            <div class="adopt-button">Adopt Me</div>
-        </div>
-       
     </div>
 
     <div class="footer-section">
