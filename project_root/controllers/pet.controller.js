@@ -51,12 +51,12 @@ const updatePet = async (req, res) => {
 const deletePet = async (req, res) => {
     try {
         const { name } = req.params;
-        const pet = await Pet.findOneAndDelete({ name: name });
-        res.status(200).json({ message: 'Pet deleted' });
-
+        const pet = await Pet.deleteMany({ name: name });
+        
         if (!name) {
             return res.status(404).json({ message: 'Pet not found'});
         }
+        res.status(200).json({ message: 'Pet deleted' });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
