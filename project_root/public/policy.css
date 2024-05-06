@@ -1,0 +1,554 @@
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Reset the default margin */
+    font-family: 'Poppins', sans-serif;
+
+}
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0px;
+    z-index: 999; /* Ensures the header stays on top of other content */
+}
+
+.header-bar {
+    width: 100%;
+    height: 97px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    width: 45.75px;
+    height: 46px;
+    position: absolute;
+    top: 30px;
+    left: 110px;
+}
+
+.brand {
+    width: auto;
+    position: absolute;
+    top: 40px;
+    left: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.brand span {
+    font-size: 24px;
+    font-family: Poppins;
+    line-height: 24px;
+    word-wrap: break-word;
+    margin: 0; /* Reset margin */
+}
+
+.brand .brand-name {
+    color: black;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.brand .brand-subtitle {
+    color: #EC9309;
+    font-weight: 300;
+}
+
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+}
+
+.menu {
+    width: auto;
+    position: absolute;
+    top: 45px;
+    left: 50%; /* Center the menu horizontally */
+    transform: translateX(-50%); /* Center the menu horizontally */
+    text-align: center;
+}
+
+.menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.menu-item:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth {
+    position: absolute;
+    top: 45px;
+    right: 110px;
+}
+
+.auth .menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.auth .menu-item.login:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth .menu-item.signup:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.footer-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: -100px;
+    z-index: 1;
+}
+
+.footer-background {
+    width: 100%;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #494949;
+}
+
+.logo1 {
+    position: absolute;
+    top: 175px;
+    left: 169px;
+}
+
+.logo1 .primary-text {
+    color: white;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.logo1 .secondary-text {
+    color: #EC9309;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.copyright,
+.footer-links,
+.quick-links,
+.navigation-links {
+    position: absolute;
+    color: white;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.copyright {
+    top: 249px;
+    left: 576px;
+    font-size: 15px;
+}
+
+.footer-links {
+    top: 249px;
+    left: 170px;
+}
+
+.footer-links .footer-link {
+    margin-right: 20px;
+    color: white; /* Keep the text white */
+}
+
+.quick-links {
+    top: 40px;
+    left: 580px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navigation-links {
+    top: 90px;
+    left: 583px;
+}
+.footer-divider {
+    width: 100%;
+    height: 0.1px;
+    background-color: white;
+    position: absolute;
+    top: 235px; /* Adjust position as needed */
+}
+.navigation-links .nav-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-image {
+    width: 500px;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 980px;
+    z-index: 1;
+}
+
+.footer-logo {
+    width: 81px;
+    height: 82px;
+    position: absolute;
+    top: 80px;
+    left: 204px;
+}
+
+.adopt-button1 {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #EC9309;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.adopt-button1:hover {
+    background-color: #FF6347;
+}
+
+
+#listing-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    top: -180px; /* Adjusted top position */
+}
+
+/* Assuming each pet card has a fixed width */
+.pet-card {
+    width: calc(25% - 20px); /* Adjusted width calculation for responsive cards */
+    margin-bottom: 20px; /* Adjust margin between cards */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.14);
+    height: 380px;
+    position: relative;
+}
+.pet-card:nth-child(n + 5) {
+    display: none;
+}
+
+.pet-image {
+    width: 100%;
+    height: 60%; /* Adjust the height as needed */
+    position: relative;
+    overflow: hidden;
+}
+
+.pet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 15px 15px 0 0; /* Adjust border-radius to match pet-card */
+}
+
+.pet-details {
+    padding-left: 20px;
+    padding-top: 10px;
+    top: 50px;
+}
+
+.pet-name {
+    color: #494949;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 35px;
+    word-wrap: break-word;
+}
+
+.pet-info {
+    color: #858383;
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 18px;
+    word-wrap: break-word;
+}
+
+.heading {
+    left: 110px;
+    top: 680px;
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.sub-heading {
+    left: 110px;
+    top:110px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 36px;
+    word-wrap: break-word;
+    height: 380px;
+    position: relative;
+}
+/* Flex container */
+#listing-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to new line */
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+
+.adopt-button {
+    width: 270px;
+    height: 28px;
+    left: 18px;
+    top: 340px;
+    position: absolute;
+    background: #EC9309;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 600;
+    color: #fff;
+}
+
+.adopt-button:hover {
+    background: #c3750c;
+}
+.view-more-button {
+    width: 176px;
+    height: 42px;
+    left: 1030px;
+    top: 25px;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid #EC9309; /* Updated to specify border style and width */
+    cursor: pointer;
+    background-color: transparent; /* Added transparent background */
+    color: #EC9309; /* Added text color */
+    font-size: 14px; /* Added font size */
+    font-family: Poppins; /* Added font family */
+    font-weight: 500; /* Added font weight */
+    line-height: 42px; /* Centering text vertically */
+    text-align: center; /* Centering text horizontally */
+    transition: background-color 0.3s, color 0.3s; /* Added transition for hover effect */
+}
+
+.view-more-button:hover {
+    background-color: #EC9309; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+.view-more-button-text {
+    left: 49px;
+    top: 11px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+/* Popup Form CSS */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.pet-details-container {
+    position: relative;
+    left: 110px;
+    top: 150px;
+    height: 600px;
+    max-width: 1250px;
+}
+
+
+.pet-details1 {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pet-image1 {
+    flex: 1;
+    overflow: hidden;
+}
+
+.pet-image1 img {
+    width: 100%; /* Adjust image size */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border: #fff;
+}
+
+.pet-info1 {
+    flex: 1;
+    padding: 20px;
+}
+
+.pet-info1 h2 {
+    margin-top: 0;
+    color: #EC9309;
+    font-size: 35px;
+}
+
+.pet-info1 p {
+    margin: 0 0 10px;
+}
+
+.pet-description1 p {
+    margin-top: 10px;
+    text-align: justify;
+}
