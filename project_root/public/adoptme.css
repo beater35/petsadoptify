@@ -501,7 +501,22 @@ input[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
 }
+/* CSS for submit button */
+button[type="submit"] {
+    background-color: #EC9309; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+}
 
+/* Hover effect */
+button[type="submit"]:hover {
+    background-color: #FF7F50; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
 input[type="submit"]:hover {
     background-color: #45a049;
 }

@@ -1,4 +1,21 @@
 /* styles.css */
+/* Add this CSS to your existing styles */
+
+.menu-item.active {
+    color: #FF7F50; /* Change color for active page */
+}
+.menu-item.active::after {
+    content: ''; /* Add a line below the active page */
+    display: block;
+    width: 0; /* Initially set width to 0 */
+    height: 3px;
+    background-color: #FF7F50;
+    position: absolute;
+    bottom: -5px;
+    left: 50%; /* Position at the center of the active button */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    transition: width 0.3s; /* Add transition effect */
+}
 
 /* Header */
 body {
