@@ -6,42 +6,7 @@
     <title>Listings</title>
     <link rel="stylesheet" type="text/css" href="listings.css">
     <link rel="icon" type="image/png" href="images/logo.png">
-    <script>
-        document.addEventListener("DOMContentLoaded", async () => {
-            // Function to set selected dropdown option
-            function setDropdownOption(dropdownId, option) {
-                var selectedOption = option.innerText;
-                var dropdownBtn = document.querySelector("#" + dropdownId + "-dropdown + .dropdown-btn");
-                dropdownBtn.innerText = selectedOption;
-                hideDropdownOptions();
-            }
-            
-            // Function to show dropdown options
-            function showDropdownOption(dropdownId) {
-                var dropdownContent = document.getElementById(dropdownId + "-dropdown");
-                dropdownContent.classList.toggle("show");
-            }
-
-            // Function to hide dropdown options
-            function hideDropdownOptions() {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var dropdownContent = dropdowns[i];
-                    if (dropdownContent.classList.contains("show")) {
-                        dropdownContent.classList.remove("show");
-                    }
-                }
-            }
-
-            // Close the dropdown when clicking outside of it
-            window.onclick = function(event) {
-                if (!event.target.matches('.dropdown-btn')) {
-                    hideDropdownOptions();
-                }
-            }
-        });
-
-    </script>
+    
 </head>
 <body>
     <div class="header">
@@ -75,37 +40,37 @@
 
     
     <!-- Breed Dropdown -->
-    <div class="dropdown">
-        <button class="dropdown-btn" onclick="showDropdownOption('breed')">Breed</button>
-        <div class="dropdown-content" id="breed-dropdown">
-            <!-- Your breed options here -->
-            <a href="#" onclick="setDropdownOption('breed', this)">Option 1</a>
-            <a href="#" onclick="setDropdownOption('breed', this)">Option 2</a>
-            <a href="#" onclick="setDropdownOption('breed', this)">Option 3</a>
-        </div>
+<div class="dropdown">
+    <button class="dropdown-btn" id="breed-btn">Breed</button>
+    <div class="dropdown-content" id="breed-dropdown" style="display: none;">
+      <!-- Your breed options here -->
+      <a href="#" class="dropdown-option">Option 1</a>
+      <a href="#" class="dropdown-option">Option 2</a>
+      <a href="#" class="dropdown-option">Option 3</a>
     </div>
-
-    <!-- Age Dropdown -->
-    <div class="dropdown">
-        <button class="dropdown-btn" onclick="showDropdownOption('age')">Age</button>
-        <div class="dropdown-content" id="age-dropdown">
-            <!-- Your age options here -->
-            <a href="#" onclick="setDropdownOption('age', this)">1-3</a>
-            <a href="#" onclick="setDropdownOption('age', this)">3-6</a>
-            <a href="#" onclick="setDropdownOption('age', this)">6-9</a>
-        </div>
+  </div>
+  
+  <!-- Age Dropdown -->
+  <div class="dropdown">
+    <button class="dropdown-btn" id="age-btn">Age</button>
+    <div class="dropdown-content" id="age-dropdown" style="display: none;">
+      <!-- Your age options here -->
+      <a href="#" class="dropdown-option">1-3</a>
+      <a href="#" class="dropdown-option">3-6</a>
+      <a href="#" class="dropdown-option">6-9</a>
     </div>
-
-    <!-- Gender Dropdown -->
-    <div class="dropdown">
-        <button class="dropdown-btn" onclick="showDropdownOption('gender')">Gender</button>
-        <div class="dropdown-content" id="gender-dropdown">
-            <!-- Your gender options here -->
-            <a href="#" onclick="setDropdownOption('gender', this)">Male</a>
-            <a href="#" onclick="setDropdownOption('gender', this)">Female</a>
-            <a href="#" onclick="setDropdownOption('gender', this)">Others</a>
-        </div>
+  </div>
+  
+  <!-- Gender Dropdown -->
+  <div class="dropdown">
+    <button class="dropdown-btn" id="gender-btn">Gender</button>
+    <div class="dropdown-content" id="gender-dropdown" style="display: none;">
+      <!-- Your gender options here -->
+      <a href="#" class="dropdown-option">Male</a>
+      <a href="#" class="dropdown-option">Female</a>
+      <a href="#" class="dropdown-option">Others</a>
     </div>
+  </div>
 
 
     <div id="listing-container">       
@@ -134,5 +99,43 @@
     </div>
     <!-- <script src="dropdown-buttons.js"></script> -->
     <script src="listings.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const dropdownBtns = document.querySelectorAll(".dropdown-btn");
+          const dropdownContents = document.querySelectorAll(".dropdown-content");
+          const dropdownOptions = document.querySelectorAll(".dropdown-option");
+      
+          dropdownBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+              showDropdownOption(this);
+            });
+          });
+      
+          dropdownOptions.forEach((option) => {
+            option.addEventListener("click", function (e) {
+              e.preventDefault();
+              setDropdownOption(this);
+            });
+          });
+      
+          function showDropdownOption(btn) {
+            const dropdownContent = btn.nextElementSibling;
+            dropdownContents.forEach((content) => {
+              if (content !== dropdownContent) {
+                content.style.display = "none";
+              }
+            });
+            dropdownContent.style.display =
+              dropdownContent.style.display === "none" ? "block" : "none";
+          }
+      
+          function setDropdownOption(option) {
+            const btn = option.closest(".dropdown").querySelector(".dropdown-btn");
+            btn.textContent = option.textContent;
+            const dropdownContent = option.closest(".dropdown-content");
+            dropdownContent.style.display = "none";
+          }
+        });
+      </script>
 </body>
 </html>
