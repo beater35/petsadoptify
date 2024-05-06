@@ -1,21 +1,4 @@
-/* styles.css */
 
-.menu-item.active {
-    color: #FF7F50; /* Change color for active page */
-}
-.menu-item.active::after {
-    content: ''; /* Add a line below the active page */
-    display: block;
-    width: 0; /* Initially set width to 0 */
-    height: 3px;
-    background-color: #FF7F50;
-    position: absolute;
-    bottom: -5px;
-    left: 50%; /* Position at the center of the active button */
-    transform: translateX(-50%); /* Adjust for center alignment */
-    transition: width 0.3s; /* Add transition effect */
-}
-/* Header */
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin */
@@ -26,6 +9,7 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0px;
     z-index: 999; /* Ensures the header stays on top of other content */
 }
 
@@ -132,7 +116,8 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    top: 330px;
+    top: -100px;
+    z-index: 1;
 }
 
 .footer-background {
@@ -236,77 +221,25 @@ body {
     left: 204px;
 }
 
-.register-title {
-    width: 356px;
-    height: 104px;
-    left: 110px;
-    top: 120px;
-    position: absolute;
-    color: black;
-    font-size: 48px;
-    font-weight: 700;
-    word-wrap: break-word;
-}
-
-.welcome-message {
-    height: 34px;
-    left: 110px;
-    top: 200px;
-    position: absolute;
-    color: #EC9309;
-    font-size: 20px;
-    font-weight: 400;
-    word-wrap: break-word;
-}
-
-/* Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin-right: 20px; /* Adjust spacing between dropdowns */
-    top: 150px;
-    left: 1110px;
-}
-.dropdown-btn {
-    background-color: #ffffff; /* Dropdown button background color */
-    color: #EC9309;
-    padding: 10px 15px;
-    border: 2px solid #EC9309; /* Set border width and color */
-    cursor: pointer;
-    border-radius: 25px;
+.adopt-button1 {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #EC9309;
+    color: white;
     font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.dropdown-btn:hover {
-    background-color: #EC9309; /* Change background color on hover */
-    color: #ffffff;
+.adopt-button1:hover {
+    background-color: #FF6347;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1; /* Change background color on hover */
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 #listing-container {
     width: 100%;
@@ -316,7 +249,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    top: 250px; /* Adjusted top position */
+    top: -180px; /* Adjusted top position */
 }
 
 /* Assuming each pet card has a fixed width */
@@ -329,7 +262,9 @@ body {
     height: 380px;
     position: relative;
 }
-
+.pet-card:nth-child(n + 5) {
+    display: none;
+}
 
 .pet-image {
     width: 100%;
@@ -369,6 +304,32 @@ body {
     word-wrap: break-word;
 }
 
+.heading {
+    left: 110px;
+    top: 680px;
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.sub-heading {
+    left: 110px;
+    top:110px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 36px;
+    word-wrap: break-word;
+    height: 380px;
+    position: relative;
+}
 /* Flex container */
 #listing-container {
     display: flex;
@@ -399,55 +360,195 @@ body {
 .adopt-button:hover {
     background: #c3750c;
 }
-/* Search Bar */
-.search-bar {
+.view-more-button {
+    width: 176px;
+    height: 42px;
+    left: 1030px;
+    top: 25px;
     position: absolute;
-    top: 150px;
-    left: 830px; /* Adjust the position as needed */
-    display: flex;
-    align-items: center;
+    border-radius: 20px;
+    border: 2px solid #EC9309; /* Updated to specify border style and width */
+    cursor: pointer;
+    background-color: transparent; /* Added transparent background */
+    color: #EC9309; /* Added text color */
+    font-size: 14px; /* Added font size */
+    font-family: Poppins; /* Added font family */
+    font-weight: 500; /* Added font weight */
+    line-height: 42px; /* Centering text vertically */
+    text-align: center; /* Centering text horizontally */
+    transition: background-color 0.3s, color 0.3s; /* Added transition for hover effect */
 }
 
-.search-bar input[type="text"] {
-    padding: 10px;
-    border: 2px solid #EC9309;
-    border-radius: 25px;
-    outline: none;
-    font-size: 16px;
-    transition: border-color 0.3s;
+.view-more-button:hover {
+    background-color: #EC9309; /* Change background color on hover */
+    color: white; /* Change text color on hover */
 }
 
-.search-bar input[type="text"]::placeholder {
-    color: #858383; /* Placeholder text color */
+.view-more-button-text {
+    left: 49px;
+    top: 11px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 14px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 20px;
+    word-wrap: break-word;
+}
+/* Popup Form CSS */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.search-bar input[type="text"]:focus {
-    border-color: #FF7F50; /* Border color on focus */
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
 }
 
-.search-bar .search-btn img {
-    width: 20px; /* Adjust the width to your preference */
-    height: 20px; /* Adjust the height to your preference */
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-
-.searchButton:hover {
-    background: #FF7F50; /* Background color on hover */
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.search-bar button {
-    width: 40px;
-    height: 40px;
-    margin-left: 0px;
-    background-color: #e1dfdb;
-    border: none;
-    border-radius: 50%;
+.popup-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.close-popup {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.search-bar button img {
-    width: 20px;
-    height: 20px;
-    display: block;
-    margin: auto;
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.pet-details-container {
+    position: relative;
+    left: 110px;
+    top: 150px;
+    height: 600px;
+    max-width: 1250px;
+}
+
+
+.pet-details1 {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pet-image1 {
+    flex: 1;
+    overflow: hidden;
+}
+
+.pet-image1 img {
+    width: 100%; /* Adjust image size */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border: #fff;
+}
+
+.pet-info1 {
+    flex: 1;
+    padding: 20px;
+}
+
+.pet-info1 h2 {
+    margin-top: 0;
+    color: #EC9309;
+    font-size: 35px;
+}
+
+.pet-info1 p {
+    margin: 0 0 10px;
+}
+
+.pet-description1 p {
+    margin-top: 10px;
+    text-align: justify;
 }

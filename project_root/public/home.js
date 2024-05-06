@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /// Add this JavaScript to make the testimonial cards scroll smoothly by 200px every 3 seconds
 
 const testimonialContainer = document.querySelector('.testimonial-cards-container');
-const scrollAmount = 300; // Scroll amount in pixels
+const scrollAmount = 250; // Scroll amount in pixels
 const scrollInterval = 3000; // Interval in milliseconds (3 seconds)
 
 function scrollTestimonials() {
@@ -101,6 +101,24 @@ document.addEventListener('DOMContentLoaded', async () => {
             adoptButton.classList.add('adopt-button');
             adoptButton.textContent = 'Adopt Me';
 
+            adoptButton.addEventListener('click', () => {
+                // Retrieve the specific data of the clicked pet
+                const petData = {
+                    name: pet.name,
+                    breed: pet.breed,
+                    gender: pet.gender,
+                    age: pet.age,
+                    description: pet.additionalInfo,
+                    image: pet.image
+                };
+            
+                // Store the pet data in local storage
+                localStorage.setItem('selectedPet', JSON.stringify(petData));
+            
+                  // Redirect the user to another page
+                window.location.href = 'adopt-button-redirect.html'; 
+            });
+            
             // Append the "Adopt Me" button to the pet card container
             petCard.appendChild(petImage);
             petCard.appendChild(petDetails);

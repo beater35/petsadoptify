@@ -1,4 +1,21 @@
 /* styles.css */
+/* Add this CSS to your existing styles */
+
+.menu-item.active {
+    color: #FF7F50; /* Change color for active page */
+}
+.menu-item.active::after {
+    content: ''; /* Add a line below the active page */
+    display: block;
+    width: 0; /* Initially set width to 0 */
+    height: 3px;
+    background-color: #FF7F50;
+    position: absolute;
+    bottom: -5px;
+    left: 50%; /* Position at the center of the active button */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    transition: width 0.3s; /* Add transition effect */
+}
 
 /* Header */
 body {
@@ -395,6 +412,32 @@ body {
     word-wrap: break-word;
 }
 
+.heading {
+    left: 110px;
+    top: 1330px;
+    position: absolute;
+    color: black;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.sub-heading {
+    left: 110px;
+    top:1350px;
+    position: absolute;
+    color: #EC9309;
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 36px;
+    word-wrap: break-word;
+    height: 380px;
+    position: relative;
+}
 .description1 {
     left: 520px;
     top: 403px;
@@ -415,7 +458,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    top: 1500px; /* Adjusted top position */
+    top: 1050px; /* Adjusted top position */
 }
 
 /* Assuming each pet card has a fixed width */
@@ -538,8 +581,9 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    top: 1500px;
+    top: 1100px;
 }
+
 
 .banner-background {
     width: 100%;
@@ -680,7 +724,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    top: 1830px;
+    top: 1400px;
 }
 
 .footer-background {
@@ -787,10 +831,11 @@ body {
 
 .testimonial-section {
     position: relative;
-    top: 1830px;
-    background-color: #f7f7f7;
+    top: 1430px;
+    background-color: #fff;
     padding: 50px 0;
     text-align: center;
+    height: 300px;
 }
 
 .testimonial-heading {
@@ -813,7 +858,7 @@ body {
 }
 
 .testimonial-card {
-    background-color: #fff;
+    background: linear-gradient(to bottom right, white, rgb(226, 225, 225));
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex: 0 0 calc(33.33% - 20px);
@@ -831,6 +876,7 @@ body {
 .reviewer-name {
     font-weight: bold;
     font-size: 14px;
+
 }
 
 
