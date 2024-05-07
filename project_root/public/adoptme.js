@@ -40,6 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener to the adopt button to open the popup form
     adoptButton.addEventListener('click', () => {
         const popupForm = document.getElementById("popup-form");
+        // Set default values for pet name and breed input fields
+        document.getElementById('pet_name').value = petDetails.name;
+        document.getElementById('pet_breed').value = petDetails.breed;
+        // Make pet name and breed fields non-editable
+        document.getElementById('pet_name').readOnly = true;
+        document.getElementById('pet_breed').readOnly = true;
         popupForm.style.display = "block";
     });
 

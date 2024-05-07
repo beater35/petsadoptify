@@ -18,6 +18,6 @@ router.post('/', createPet);
 router.put('/:name', updatePet);
 
 // Delete pet
-router.delete('/:name', deletePet);
+router.delete('/:id', deletePet);
 
 module.exports = router;
