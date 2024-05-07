@@ -12,21 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const occupationInput = document.getElementById('occupation').value;
         const adoptReasonInput = document.getElementById('adopt_reason').value;
   
-        // Retrieve selectedPet data from local storage
-        const selectedPetData = JSON.parse(localStorage.getItem('selectedPet'));
-        const petName = selectedPetData.name;
-        const petBreed = selectedPetData.breed;
-  
-        // Construct formData object
         const formData = {
             name: nameInput,
             email: emailInput,
             phone: phoneInput,
             address: addressInput,
             occupation: occupationInput,
-            adopt_reason: adoptReasonInput,
-            pet_name: petName,
-            pet_breed: petBreed
+            adopt_reason: adoptReasonInput
         };
   
         try {
@@ -53,4 +45,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
   });
-  
