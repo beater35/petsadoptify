@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const addressInput = document.getElementById('address').value;
         const occupationInput = document.getElementById('occupation').value;
         const adoptReasonInput = document.getElementById('adopt_reason').value;
+        const petNameInput = document.getElementById('pet_name').value;
+        const petBreedInput = document.getElementById('pet_breed').value;
   
         const formData = {
             name: nameInput,
@@ -18,7 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
             phone: phoneInput,
             address: addressInput,
             occupation: occupationInput,
-            adopt_reason: adoptReasonInput
+            adopt_reason: adoptReasonInput,
+            pet_name : petNameInput,
+            pet_breed : petBreedInput
+
         };
   
         try {
