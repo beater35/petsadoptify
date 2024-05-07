@@ -5,7 +5,7 @@ const ApplicationForm = require("../models/applicationForm");
 const getForm = async (req, res) => {
     try {
         const form = await ApplicationForm.find({});
-        res.status(200).json({ message: error.message });
+        res.status(200).json({ form });
     } catch (error) {
         res.status(500).json({ message: error.message})
     }

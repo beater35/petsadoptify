@@ -171,3 +171,31 @@ function scrollToHash() {
 }
 
 document.addEventListener('DOMContentLoaded', scrollToHash);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('/api/application-form') // Replace 'https://example.com/api/applications' with your actual API endpoint
+    .then(response => response.json())
+    .then(data => {
+        const applicationFormList = data.form
+        console.log(applicationFormList)
+        const tableBody = document.querySelector('#applicationsTable tbody');
+        applicationFormList.forEach(application => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${application.name}</td>
+                <td>${application.email}</td>
+                <td>${application.phone}</td>
+                <td>${application.address}</td>
+                <td>${application.occupation}</td>
+                <td>${application.adopt_reason}</td>
+                <td>${application.petName}</td>
+                <td>${application.petBreed}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+});

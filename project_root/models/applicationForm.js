@@ -26,6 +26,14 @@ const applicationFormSchema = new mongoose.Schema({
     adopt_reason: {
         type: String,
         required: true
+    }, 
+    pet_name: {
+        type: String,
+        required: true
+    },
+    pet_breed:{
+        type: String,
+        required: true
     }
 
 }, {collection : "applicationForms"}
