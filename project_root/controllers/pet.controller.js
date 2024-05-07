@@ -87,10 +87,10 @@ const updatePet = async (req, res) => {
 // Delete pet
 const deletePet = async (req, res) => {
     try {
-        const { name } = req.params;
-        const pet = await Pet.deleteMany({ name: name });
+        const { id } = req.params;
+        const pet = await Pet.findByIdAndDelete( id );
         
-        if (!name) {
+        if (!pet) {
             return res.status(404).json({ message: 'Pet not found'});
         }
         res.status(200).json({ message: 'Pet deleted' });

@@ -19,6 +19,8 @@
                 <li><a href="#Dashboard">Dashboard</a></li>
                 <li><a href="#contact-info">Inquiries</a></li>
                 <li><a href="#applications">Applications</a></li> <!-- Add link to the new section -->
+                <li><a href="#listings">Listings</a></li> <!-- Add link to the new section -->
+
 
             </ul>
         </div>
@@ -100,6 +102,12 @@
                     </tbody>
                 </table>
             </section>
+            <section id="listings" style="display: none;"> <!-- New section for listings -->
+                <h2>Listings</h2>
+                <div id="listing-container">       
+                </div>
+               
+            </section>
             
            
             
@@ -121,6 +129,7 @@
                 $('#Dashboard').hide();
                 $('#contact-info').show();
                 $('#applications').hide();
+                $('#listings').hide();
 
            
             }
@@ -128,12 +137,22 @@
                 $('#Dashboard').hide();
                 $('#contact-info').hide();
                 $('#applications').show();
+                $('#listings').hide();
+
+            }
+            else if(targetSection === '#listings'){
+                $('#Dashboard').hide();
+                $('#contact-info').hide();
+                $('#applications').hide();
+                $('#listings').show();
 
             }
             else{
                 $('#contact-info').hide();
                 $('#applications').hide();
                 $('#Dashboard').show();
+                $('#listings').hide();
+
             }
         });
     });
