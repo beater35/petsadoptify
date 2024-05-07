@@ -189,8 +189,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <td>${application.address}</td>
                 <td>${application.occupation}</td>
                 <td>${application.adopt_reason}</td>
-                <td>${application.petName}</td>
-                <td>${application.petBreed}</td>
+                <td>${application.pet_name}</td>
+                <td>${application.pet_breed}</td>
             `;
             tableBody.appendChild(row);
         });
