@@ -87,19 +87,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-
-    document.getElementById("search-btn").addEventListener("click", () => {
-      event.preventDefault();
-      // Retrieve the search query from the input field
-      const query = document.querySelector(
-        '.search-bar input[type="text"]'
-      ).value;
-  
+document.getElementById("search-btn").addEventListener("click", () => {
+      
       // Retrieve the selected values for breed, age, and gender
-      let breed = document.getElementById("breed-dropdown").textContent.trim();
-      let age = document.getElementById("age-dropdown").textContent.trim();
-      let gender = document.getElementById("gender-dropdown").textContent.trim();
-  
+      const selectedBreedInput = document.querySelector('input[name="breed"]:checked');
+      const selectedAgeInput = document.querySelector('input[name="age"]:checked');
+      const selectedGenderInput = document.querySelector('input[name="gender"]:checked');
+
+      // Check if a radio button is checked for each category
+      const breed = selectedBreedInput ? selectedBreedInput.value : null;
+      const age = selectedAgeInput ? selectedAgeInput.value : null;
+      const gender = selectedGenderInput ? selectedGenderInput.value : null;
+
       // Remove default values if they haven't been changed
       if (breed === "Breed") {
         breed = "";
@@ -112,7 +111,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
   
       // Log the search query and additional parameters
-      console.log("Search query:", query);
       console.log("Breed:", breed);
       console.log("Age:", age);
       console.log("Gender:", gender);
