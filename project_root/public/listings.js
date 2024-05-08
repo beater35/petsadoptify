@@ -175,3 +175,54 @@ document.getElementById("search-btn").addEventListener("click", () => {
         });
     });
 });
+
+let breed;
+let age;
+let gender;
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // Function to set selected dropdown option
+  function setDropdownOption(dropdownId, option) {
+      var selectedOption = option.innerText;
+      var dropdownBtn = document.querySelector("#" + dropdownId + "-dropdown + .dropdown-btn");
+      dropdownBtn.innerText = selectedOption;
+      hideDropdownOptions();
+  }
+  
+  // Function to show dropdown options
+  function showDropdownOption(dropdownId) {
+      var dropdownContent = document.getElementById(dropdownId + "-dropdown");
+      dropdownContent.classList.toggle("show");
+  }
+
+  // Function to hide dropdown options
+  function hideDropdownOptions() {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+          var dropdownContent = dropdowns[i];
+          if (dropdownContent.classList.contains("show")) {
+              dropdownContent.classList.remove("show");
+          }
+      }
+  }
+
+  // Close the dropdown when clicking outside of it
+  window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+          hideDropdownOptions();
+      }
+  }
+
+  // Get all dropdown options
+  var dropdownOptions = document.querySelectorAll(".dropdown-content a");
+
+  // Attach click event to each dropdown option
+  dropdownOptions.forEach(function(option) {
+      option.addEventListener("click", function() {
+          var dropdownId = option.parentElement.id.split('-')[0]; // Extract dropdown ID
+          var selectedOption = option.textContent; // Get the text content of the selected option
+          console.log("Selected option:", selectedOption); // Log the selected option to the console
+      });
+  });
+});

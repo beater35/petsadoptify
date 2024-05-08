@@ -39,45 +39,39 @@
 </div>
 
     
-    <!-- Breed Radio Buttons -->
-  <div class="dropdown">
-    <h3>Breed</h3>
-    <div class="options">
-      <input type="radio" class="dropdown-btn" name="breed" id="breed-option-1">
-      <label for="breed-option-1">Option 1</label>
-      <input type="radio" class="dropdown-btn" name="breed" id="breed-option-2">
-      <label for="breed-option-2">Option 2</label>
-      <input type="radio" class="dropdown-btn" name="breed" id="breed-option-3">
-      <label for="breed-option-3">Option 3</label>
-    </div>
+      
+    <!-- Breed Dropdown -->
+    <div class="dropdown">
+      <button class="dropdown-btn" onclick="showDropdownOption('breed')">Breed</button>
+      <div class="dropdown-content" id="breed-dropdown">
+          <!-- Your breed options here -->
+          <a href="#" onclick="setDropdownOption('breed', this)">Option 1</a>
+          <a href="#" onclick="setDropdownOption('breed', this)">Option 2</a>
+          <a href="#" onclick="setDropdownOption('breed', this)">Option 3</a>
+      </div>
   </div>
 
-  <!-- Age Radio Buttons -->
+  <!-- Age Dropdown -->
   <div class="dropdown">
-    <h3>Age</h3>
-    <div class="options">
-      <input type="radio" class="dropdown-btn" name="age" id="age-option-1">
-      <label for="age-option-1">1-3</label>
-      <input type="radio" class="dropdown-btn" name="age" id="age-option-2">
-      <label for="age-option-2">3-6</label>
-      <input type="radio" class="dropdown-btn" name="age" id="age-option-3">
-      <label for="age-option-3">6-9</label>
-    </div>
+      <button class="dropdown-btn" onclick="showDropdownOption('age')">Age</button>
+      <div class="dropdown-content" id="age-dropdown">
+          <!-- Your age options here -->
+          <a href="#" onclick="setDropdownOption('age', this)">1-3</a>
+          <a href="#" onclick="setDropdownOption('age', this)">3-6</a>
+          <a href="#" onclick="setDropdownOption('age', this)">6-9</a>
+      </div>
   </div>
 
-  <!-- Gender Radio Buttons -->
+  <!-- Gender Dropdown -->
   <div class="dropdown">
-    <h3>Gender</h3>
-    <div class="options">
-      <input type="radio" class="dropdown-btn" name="gender" id="gender-option-male">
-      <label for="gender-option-male">Male</label>
-      <input type="radio" class="dropdown-btn" name="gender" id="gender-option-female">
-      <label for="gender-option-female">Female</label>
-      <input type="radio" class="dropdown-btn" name="gender" id="gender-option-others">
-      <label for="gender-option-others">Others</label>
-    </div>
+      <button class="dropdown-btn" onclick="showDropdownOption('gender')">Gender</button>
+      <div class="dropdown-content" id="gender-dropdown">
+          <!-- Your gender options here -->
+          <a href="#" onclick="setDropdownOption('gender', this)">Male</a>
+          <a href="#" onclick="setDropdownOption('gender', this)">Female</a>
+          <a href="#" onclick="setDropdownOption('gender', this)">Others</a>
+      </div>
   </div>
-
 
 
     <div id="listing-container">       
@@ -104,50 +98,6 @@
     </div>
     <!-- <script src="dropdown-buttons.js"></script> -->
     <script src="listings.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const dropdownBtns = document.querySelectorAll(".dropdown-btn");
-          const dropdownContents = document.querySelectorAll(".dropdown-content");
-          const dropdownOptions = document.querySelectorAll(".dropdown-option");
-      
-          dropdownBtns.forEach((btn) => {
-            btn.addEventListener("click", function () {
-              showDropdownOption(this);
-            });
-          });
-      
-          dropdownOptions.forEach((option) => {
-            option.addEventListener("click", function (e) {
-              e.preventDefault();
-              setDropdownOption(this);
-            });
-          });
-      
-          function showDropdownOption(btn) {
-            const dropdownContent = btn.nextElementSibling;
-            dropdownContents.forEach((content) => {
-              if (content !== dropdownContent) {
-                content.style.display = "none";
-              }
-            });
-            dropdownContent.style.display =
-              dropdownContent.style.display === "none" ? "block" : "none";
-          }
-      
-          function setDropdownOption(option) {
-              const btn = option.closest(".dropdown").querySelector(".dropdown-btn");
-              btn.textContent = option.textContent;
-              const dropdownContent = option.closest(".dropdown-content");
-              dropdownContent.style.display = "none";
-
-              // Here, you can pass the selected value to another function or perform any other action
-              const selectedValue = option.textContent;
-              // Call a function passing the selected value
-              // For example:
-              // doSomethingWithSelectedValue(selectedValue);
-          }
-
-        });
-      </script>
+    
 </body>
 </html>
