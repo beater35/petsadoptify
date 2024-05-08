@@ -1,50 +1,42 @@
-// server.js
+const form = document.getElementById('contactForm');
 
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+form.addEventListener('submit', async (event) => {
+  event.preventDefault(); // Prevent the default form submission
 
-const app = express();
+  // Get form data
+  const name = document.getElementById('name').value;
+  const address = document.getElementById('address').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
 
-// Middleware
-app.use(bodyParser.json());
+  // Create the request body
+  const requestBody = {
+    name,
+    address,
+    email,
+    message,
+  };
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/contactDB', { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-    console.log('Connected to MongoDB');
-});
+  try {
+    // Send the POST request to the server
+    const response = await fetch('/api/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
 
-// Define schema and model for contact info
-const contactSchema = new mongoose.Schema({
-    name: String,
-    address: String,
-    email: String,
-    message: String
-});
-
-const Contact = mongoose.model('Contact', contactSchema);
-
-// Route to handle form submission
-app.post('/contact', (req, res) => {
-    const { name, address, email, message } = req.body;
-    const newContact = new Contact({ name, address, email, message });
-    newContact.save()
-        .then(() => res.status(201).json({ message: 'Contact information saved successfully' }))
-        .catch(err => res.status(500).json({ error: err.message }));
-});
-
-// Route to fetch contact info for admin dashboard
-app.get('/contacts', (req, res) => {
-    Contact.find()
-        .then(contacts => res.status(200).json(contacts))
-        .catch(err => res.status(500).json({ error: err.message }));
-});
-
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    if (response.ok) {
+      // Handle the successful response
+      console.log('Contact information submitted successfully');
+      // You can reset the form or perform any other actions here
+    } else {
+      // Handle the error response
+      console.error('Error submitting contact information');
+    }
+  } catch (error) {
+    // Handle network errors or other exceptions
+    console.error('An error occurred:', error);
+  }
 });

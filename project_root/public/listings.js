@@ -87,19 +87,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-
-    document.getElementById("search-btn").addEventListener("click", () => {
-      event.preventDefault();
-      // Retrieve the search query from the input field
-      const query = document.querySelector(
-        '.search-bar input[type="text"]'
-      ).value;
-  
+document.getElementById("search-btn").addEventListener("click", () => {
+      
       // Retrieve the selected values for breed, age, and gender
-      let breed = document.getElementById("breed-dropdown").textContent.trim();
-      let age = document.getElementById("age-dropdown").textContent.trim();
-      let gender = document.getElementById("gender-dropdown").textContent.trim();
-  
+      const selectedBreedInput = document.querySelector('input[name="breed"]:checked');
+      const selectedAgeInput = document.querySelector('input[name="age"]:checked');
+      const selectedGenderInput = document.querySelector('input[name="gender"]:checked');
+
+      // Check if a radio button is checked for each category
+      const breed = selectedBreedInput ? selectedBreedInput.value : null;
+      const age = selectedAgeInput ? selectedAgeInput.value : null;
+      const gender = selectedGenderInput ? selectedGenderInput.value : null;
+
       // Remove default values if they haven't been changed
       if (breed === "Breed") {
         breed = "";
@@ -112,7 +111,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
   
       // Log the search query and additional parameters
-      console.log("Search query:", query);
       console.log("Breed:", breed);
       console.log("Age:", age);
       console.log("Gender:", gender);
@@ -176,4 +174,55 @@ document.addEventListener('DOMContentLoaded', async () => {
           console.error("Error fetching pet data:", error);
         });
     });
+});
+
+let breed;
+let age;
+let gender;
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // Function to set selected dropdown option
+  function setDropdownOption(dropdownId, option) {
+      var selectedOption = option.innerText;
+      var dropdownBtn = document.querySelector("#" + dropdownId + "-dropdown + .dropdown-btn");
+      dropdownBtn.innerText = selectedOption;
+      hideDropdownOptions();
+  }
+  
+  // Function to show dropdown options
+  function showDropdownOption(dropdownId) {
+      var dropdownContent = document.getElementById(dropdownId + "-dropdown");
+      dropdownContent.classList.toggle("show");
+  }
+
+  // Function to hide dropdown options
+  function hideDropdownOptions() {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+          var dropdownContent = dropdowns[i];
+          if (dropdownContent.classList.contains("show")) {
+              dropdownContent.classList.remove("show");
+          }
+      }
+  }
+
+  // Close the dropdown when clicking outside of it
+  window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn')) {
+          hideDropdownOptions();
+      }
+  }
+
+  // Get all dropdown options
+  var dropdownOptions = document.querySelectorAll(".dropdown-content a");
+
+  // Attach click event to each dropdown option
+  dropdownOptions.forEach(function(option) {
+      option.addEventListener("click", function() {
+          var dropdownId = option.parentElement.id.split('-')[0]; // Extract dropdown ID
+          var selectedOption = option.textContent; // Get the text content of the selected option
+          console.log("Selected option:", selectedOption); // Log the selected option to the console
+      });
+  });
 });

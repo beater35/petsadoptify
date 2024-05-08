@@ -199,3 +199,39 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Error fetching data:', error);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Select the tbody element of the table
+    const tbody = document.querySelector('#contactTable tbody');
+
+    // Fetch data from the API
+    fetch('/api/contacts')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch contacts');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Iterate over the data and create table rows
+        data.forEach(contact => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${contact.name}</td>
+                <td>${contact.address}</td>
+                <td>${contact.email}</td>
+                <td>${contact.message}</td>
+            `;
+            tbody.appendChild(row);
+        });
+        
+        // Show the contact info section
+        document.querySelector('#contact-info').style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Error fetching contacts:', error.message);
+    });
+
+
+});
