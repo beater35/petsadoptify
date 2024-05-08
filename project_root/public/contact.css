@@ -281,7 +281,10 @@ body {
     font-size: 16px;
     background-color: transparent; /* Transparent background */
     transition: border-color 0.3s; /* Add transition effect for border color change */
+    font-family: 'Poppins', sans-serif;
+
 }
+
 /* Change border color on focus */
 .input:focus {
     outline: none;
