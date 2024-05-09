@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         
         // Show the contact info section
-        document.querySelector('#contact-info').style.display = 'block';
+        // document.querySelector('#contact-info').style.display = 'block';
     })
     .catch(error => {
         console.error('Error fetching contacts:', error.message);

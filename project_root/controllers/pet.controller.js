@@ -25,7 +25,7 @@ const getPets = async (req, res) => {
         }
 
         if (gender) {
-            queryObject.gender = { $regex: gender, $options: 'i' };
+            queryObject.gender = gender.toLowerCase();
         }
 
         if (age) {
