@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       event.preventDefault();
 
       const email = document.getElementById('email').value;
-
-     // Store the email in local storage
-      localStorage.setItem('loggedInEmail', email);
-
       const password = document.getElementById('password').value;
       console.log(email, password);
 
@@ -31,9 +27,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           // Check if the entered email and password match any user in the database
           const foundUser = userData.find(user => user.email === email && user.password === password);
           if (foundUser) {
-              // console.log('User found:', foundUser);
-              // User authentication successful, proceed with further actions
-              // For example, redirect to another page
+              // // After successful login
+               // Store the email in local storage
+            localStorage.setItem('loggedInEmail', email);
+
               window.location.href = "afterlogin.html"; // Change "dashboard.html" to the actual URL you want to redirect to
           } else {
               console.log('User not found or invalid credentials');
@@ -49,9 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       
   });
 });
-// After successful login
-const email = document.getElementById('email').value;
-localStorage.setItem('loggedInEmail', email);
+
 
 
 // JavaScript code in your frontend
