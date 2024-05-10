@@ -85,37 +85,49 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error fetching pet data:', error);
     });
 
+    let breed = '';
+    let age = '';
+    let gender = '';
+
+    const breedOptions = document.getElementById("breed-option");
+    const ageOptions = document.getElementById("age-options");
+    const genderOptions = document.getElementById("gender-options");
+
+    console.log(breedOptions);
+    console.log(ageOptions);
+    console.log(genderOptions);
+
+    breedOptions.addEventListener("change", function () {
+      breed = breedOptions.value;
+      console.log("Selected Breed:", breed);
+    });
+
+    ageOptions.addEventListener("change", function () {
+      age = ageOptions.value;
+      console.log("Selected Age:", age);
+    });
+
+    genderOptions.addEventListener("change", function () {
+      gender = genderOptions.value;
+      console.log("Selected Gender:", gender);
+    });
 
 
-document.getElementById("search-btn").addEventListener("click", () => {
-      
-      // Retrieve the selected values for breed, age, and gender
-      const selectedBreedInput = document.querySelector('input[name="breed"]:checked');
-      const selectedAgeInput = document.querySelector('input[name="age"]:checked');
-      const selectedGenderInput = document.querySelector('input[name="gender"]:checked');
+  document.getElementById("search-btn").addEventListener("click", () => {
 
-      // Check if a radio button is checked for each category
-      const breed = selectedBreedInput ? selectedBreedInput.value : null;
-      const age = selectedAgeInput ? selectedAgeInput.value : null;
-      const gender = selectedGenderInput ? selectedGenderInput.value : null;
+    const listingContainer = document.getElementById("listing-container");
+    if (listingContainer) {
+      listingContainer.innerHTML = ''; // Clear all child elements
+    } else {
+      console.error("Listing container not found");
+      return; // Exit the function if the container is not found
+    }
 
-      // Remove default values if they haven't been changed
-      if (breed === "Breed") {
-        breed = "";
-      }
-      if (age === "Age") {
-        age = "";
-      }
-      if (gender === "Gender") {
-        gender = "";
-      }
-  
-      // Log the search query and additional parameters
+
       console.log("Breed:", breed);
       console.log("Age:", age);
       console.log("Gender:", gender);
-  
-      fetch(`/api/pets?name=${query}&breed=${breed}&age=${age}&gender=${gender}`)
+        fetch(`/api/pets?breed=${breed}&age=${age}&gender=${gender}`)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
@@ -162,7 +174,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
             petCard.appendChild(petDetails);
   
             // Append the pet card to the listing container
-            const listingContainer = document.getElementById("listing-container");
             if (listingContainer) {
               listingContainer.appendChild(petCard);
             } else {
@@ -176,53 +187,3 @@ document.getElementById("search-btn").addEventListener("click", () => {
     });
 });
 
-let breed;
-let age;
-let gender;
-
-
-document.addEventListener("DOMContentLoaded", async () => {
-  // Function to set selected dropdown option
-  function setDropdownOption(dropdownId, option) {
-      var selectedOption = option.innerText;
-      var dropdownBtn = document.querySelector("#" + dropdownId + "-dropdown + .dropdown-btn");
-      dropdownBtn.innerText = selectedOption;
-      hideDropdownOptions();
-  }
-  
-  // Function to show dropdown options
-  function showDropdownOption(dropdownId) {
-      var dropdownContent = document.getElementById(dropdownId + "-dropdown");
-      dropdownContent.classList.toggle("show");
-  }
-
-  // Function to hide dropdown options
-  function hideDropdownOptions() {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      for (var i = 0; i < dropdowns.length; i++) {
-          var dropdownContent = dropdowns[i];
-          if (dropdownContent.classList.contains("show")) {
-              dropdownContent.classList.remove("show");
-          }
-      }
-  }
-
-  // Close the dropdown when clicking outside of it
-  window.onclick = function(event) {
-      if (!event.target.matches('.dropdown-btn')) {
-          hideDropdownOptions();
-      }
-  }
-
-  // Get all dropdown options
-  var dropdownOptions = document.querySelectorAll(".dropdown-content a");
-
-  // Attach click event to each dropdown option
-  dropdownOptions.forEach(function(option) {
-      option.addEventListener("click", function() {
-          var dropdownId = option.parentElement.id.split('-')[0]; // Extract dropdown ID
-          var selectedOption = option.textContent; // Get the text content of the selected option
-          console.log("Selected option:", selectedOption); // Log the selected option to the console
-      });
-  });
-});
