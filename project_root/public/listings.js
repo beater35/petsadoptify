@@ -168,11 +168,36 @@ document.addEventListener('DOMContentLoaded', async () => {
             petDetails.appendChild(petBreed);
             petDetails.appendChild(petGender);
             petDetails.appendChild(petAge);
+
+            // Create the "Adopt Me" button
+            const adoptButton = document.createElement('div');
+            adoptButton.classList.add('adopt-button');
+            adoptButton.textContent = 'Adopt Me';
+
+            
+        adoptButton.addEventListener('click', () => {
+        // Retrieve the specific data of the clicked pet
+        const petData = {
+            name: pet.name,
+            breed: pet.breed,
+            gender: pet.gender,
+            age: pet.age,
+            description: pet.additionalInfo,
+            image: pet.image
+        };
+    
+        // Store the pet data in local storage
+        localStorage.setItem('selectedPet', JSON.stringify(petData));
+    
+          // Redirect the user to another page
+        window.location.href = 'adopt-button-redirect.html'; 
+    });
   
             // Append the pet image and details to the pet card container
             petCard.appendChild(petImage);
             petCard.appendChild(petDetails);
-  
+            petCard.appendChild(adoptButton);
+
             // Append the pet card to the listing container
             if (listingContainer) {
               listingContainer.appendChild(petCard);
