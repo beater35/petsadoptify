@@ -42,11 +42,12 @@
       <span class="close-popup">&times;</span>
       <h2>Adoption Form</h2>
       <form>
-          <!-- Additional fields for pet details -->
-          <label for="pet_name">Pet Name:</label>
-          <input type="text" id="pet_name" name="pet_name" required><br>
-          <label for="pet_breed">Pet Breed:</label>
-          <input type="text" id="pet_breed" name="pet_breed" required><br>       
+        <!-- Additional fields for pet details -->
+        <label for="pet_name">Pet Name:</label>
+        <input type="text" id="pet_name" name="pet_name" required><br>
+        <label for="pet_breed">Pet Breed:</label>
+        <input type="text" id="pet_breed" name="pet_breed" required><br>
+        
           <!-- Form fields for user details -->
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required><br>
@@ -60,8 +61,8 @@
           <input type="text" id="occupation" name="Occupation" required><br>
           <label for="adopt_reason">Why do you want to adopt this pet?</label>
           <input type="text" id="adopt_reason" name="adopt_reason" required><br>
-
           <button type="submit">Submit</button> 
+          
       </form>
   </div>
 </div>
@@ -93,6 +94,42 @@
         <div class="footer-divider"></div>
     </div>
 <script>document.addEventListener('DOMContentLoaded', async () => {
+      // Check if the user is logged in
+      const loggedInEmail = localStorage.getItem('loggedInEmail');
+      if (!loggedInEmail || loggedInEmail.trim() === '') {
+          // If not logged in or email is empty, display message and redirect to login page
+          alert('Please Login First');
+          window.location.href = 'login.html';
+          return; // Exit the function to prevent further execution
+      }
+
+
+  adoptButton.addEventListener('click', () => {
+
+        // Check if the user is logged in
+        const loggedInEmail = localStorage.getItem('loggedInEmail');
+        if (!loggedInEmail || loggedInEmail.trim() === '') {
+            // If not logged in or email is empty, display message and redirect to login page
+            alert('Please Login First');
+            window.location.href = 'login.html';
+            return; // Exit the function to prevent further execution
+        }
+    // Retrieve the specific data of the clicked pet
+    const petData = {
+        name: pet.name,
+        breed: pet.breed,
+        gender: pet.gender,
+        age: pet.age,
+        description: pet.additionalInfo,
+        image: pet.image
+    };
+
+    // Store the pet data in local storage
+    localStorage.setItem('selectedPet', JSON.stringify(petData));
+
+      // Redirect the user to another page
+    window.location.href = 'adopt-button-redirect.html'; 
+});
     // Fetch pet data from your backend API
     fetch('/api/pets')
     .then(response => response.json())
@@ -143,23 +180,7 @@
 
 
             
-    adoptButton.addEventListener('click', () => {
-        // Retrieve the specific data of the clicked pet
-        const petData = {
-            name: pet.name,
-            breed: pet.breed,
-            gender: pet.gender,
-            age: pet.age,
-            description: pet.additionalInfo,
-            image: pet.image
-        };
-    
-        // Store the pet data in local storage
-        localStorage.setItem('selectedPet', JSON.stringify(petData));
-    
-          // Redirect the user to another page
-        window.location.href = 'adopt-button-redirect.html'; 
-    });
+   
 
 
             // Append the "Adopt Me" button to the pet card container
