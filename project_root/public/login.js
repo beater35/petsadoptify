@@ -27,11 +27,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           // Check if the entered email and password match any user in the database
           const foundUser = userData.find(user => user.email === email && user.password === password);
           if (foundUser) {
-              // // After successful login
-               // Store the email in local storage
-            localStorage.setItem('loggedInEmail', email);
-
-              window.location.href = "afterlogin.html"; // Change "dashboard.html" to the actual URL you want to redirect to
+              // console.log('User found:', foundUser);
+              // User authentication successful, proceed with further actions
+              // For example, redirect to another page
+              window.location.href = "home.html"; // Change "dashboard.html" to the actual URL you want to redirect to
           } else {
               console.log('User not found or invalid credentials');
               // Display an error message or take appropriate action
@@ -41,9 +40,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           console.error('Error fetching user data:', error.message);
       }
 
-
-      
-      
   });
 });
 

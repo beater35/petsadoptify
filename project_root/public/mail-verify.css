@@ -1,3 +1,4 @@
+
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin */
@@ -9,21 +10,6 @@ body {
     width: 100%;
     top: 0;
     z-index: 999; /* Ensures the header stays on top of other content */
-}
-.menu-item.active {
-    color: #FF7F50; /* Change color for active page */
-}
-.menu-item.active::after {
-    content: ''; /* Add a line below the active page */
-    display: block;
-    width: 0; /* Initially set width to 0 */
-    height: 3px;
-    background-color: #FF7F50;
-    position: absolute;
-    bottom: -5px;
-    left: 50%; /* Position at the center of the active button */
-    transform: translateX(-50%); /* Adjust for center alignment */
-    transition: width 0.3s; /* Add transition effect */
 }
 
 .header-bar {
@@ -125,11 +111,165 @@ body {
     color: #FF7F50; /* Change color on hover */
 }
 
+
+
+.container {
+    top: 110px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 110px;
+}
+
+.shape1 {
+    width: 427.65px;
+    height: 519.27px;
+    left: 939.56px;
+    top: 263.67px;
+    position: absolute;
+    transform: rotate(21.45deg);
+    transform-origin: 0 0;
+    background: #494949;
+    border-radius: 99px;
+}
+
+.shape2 {
+    width: 460.83px;
+    height: 587.34px;
+    left: 917.65px;
+    top: 141px;
+    position: absolute;
+    transform: rotate(21.30deg);
+    transform-origin: 0 0;
+    background: #FCEED5;
+    border-radius: 99px;
+}
+
+.title {
+    left: 803px;
+    top: 29px;
+    position: absolute;
+    color: #494949;
+    font-size: 52px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 68px;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.subtitle {
+    left: 852px;
+    top: 87px;
+    position: absolute;
+    color: #494949;
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 54px;
+    word-wrap: break-word;
+}
+
+.image-container {
+    width: 647.95px;
+    height: 498.85px;
+    left: 657px;
+    top: 180px;
+    position: absolute;
+}
+
+.image-container .background {
+    width: 647.95px;
+    height: 498.85px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #D9D9D9;
+}
+
+.image-container img {
+    width: 647px;
+    height: 575.01px;
+    left: 39px;
+    top: -45px;
+    position: absolute;
+}
+
+.register-title {
+    width: 100%;
+    height: 104px;
+    left: 0px;
+    top: 50px;
+    position: absolute;
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.welcome-message {
+    width: 500px;
+    height: 34px;
+    left: 0px;
+    top: 125px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.reset-button {
+    width: 620px;
+    height: 43px;
+    top: 300px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+    background: #EC9309;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.input-container {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    color: black;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.input {
+    width: 600px;
+    height: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    color: rgba(0, 0, 0,); font-size: 14px; font-family: Poppins;
+    opacity: 0.50; background: #FFD697;
+}
+
+
 .footer-section {
     position: relative;
     width: 100%;
     height: 100%;
-    top: 120px;
+    top: 800px;
     z-index: 1;
 }
 
@@ -234,172 +374,53 @@ body {
     left: 204px;
 }
 
-/* Container styles */
-.container {
-    position: relative;
-    max-width: 600px;
-    padding: 20px;
-    left: 110px;
-    top: 100px;
-}
-
-/* Title styles */
-.title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #494949;
-}
-
-/* Subtitle styles */
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #EC9309;
-}
-
-/* Input container styles */
-.input-container {
-    position: relative;
-    margin-bottom: 20px;
-    top: 20px;
-}
-
-/* Label styles */
-.label {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #494949;
-}
-
-.input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-bottom: 1px solid #ccc; /* Use bottom border only */
-    font-size: 16px;
-    background-color: transparent; /* Transparent background */
-    transition: border-color 0.3s; /* Add transition effect for border color change */
-    font-family: 'Poppins', sans-serif;
-
-}
-
-/* Change border color on focus */
-.input:focus {
-    outline: none;
-    border-color: #EC9309;
-}
-
-
-/* Textarea styles */
-textarea.input {
-    resize: vertical;
-}
-
-/* Button styles */
-.contact-button {
-    position: relative;
-    top: 10px;
-    display: block;
-    width: 100%;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #EC9309;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-    background-color: #FF7F50;
-}
-.image-container {
+@media screen and (max-width: 768px) {
+.menu {
+    display: none; /* Hide the menu by default on smaller screens */
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 700px;
-    width: 100%; /* Adjust the width as needed */
-    height: 100%;
-}
-
-.image-container img {
+    top: 90px; /* Position the menu below the header */
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire container */
+    background-color: white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+    z-index: 999; /* Ensure it's above other content */
 }
-/* Styling for the account icon */
-.account-icon {
-    cursor: pointer;
+.logo {
+    left: 15px;
 }
-
-/* Styling for the account card */
-.account-card {
-    display: none;
+.brand{
+    left: 70px;
+}
+.menu-toggle {
+    display: block; /* Show the menu toggle on smaller screens */
     position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    top: 40px;
-    right: 10px;
-    z-index: 999;
-    width: 200px; /* Adjust width as needed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a better look */
-    border-radius: 10px; /* Rounded corners */
-    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    top: 30px;
+    right: 20px; /* Position the toggle on the right side */
+    cursor: pointer;
+    font-size: 30px; /* Increase the font size for the toggle icon */
 }
 
-/* Show the account card when the checkbox is checked */
-.account-toggle:checked + .account-card {
+.menu-item {
     display: block;
-}
-
-/* Style for user photo in account card */
-.user-photo {
-    width: 80px; /* Adjust size as needed */
-    height: 80px; /* Adjust size as needed */
-    border-radius: 50%; /* Make it circular */
-    display: block;
-    margin: 0 auto; /* Center the image */
-    margin-bottom: 10px; /* Add some space below the image */
-}
-
-/* Style for username and email in account card */
-.user-details {
-    text-align: center; /* Center-align the text */
-}
-
-/* Style for username */
-.username {
-    font-size: 20px; /* Bigger font size */
-    font-weight: bold; /* Bold font */
-}
-
-/* Style for email */
-.mail {
-    position: relative;
-    top: -20px;
-    font-size: 14px; /* Smaller font size */
-}
-
-/* Style for logout button */
-.logout-button {
-    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
     text-align: center;
-    margin-top: 20px;
-    color: #333;
-    text-decoration: none;
 }
 
-/* Optional: Add hover effect to the logout button */
-.logout-button:hover {
-    color: #EC9309;
+.auth {
+    display: none; /* Hide the authentication buttons on smaller screens */
 }
 
-/* Hide the checkbox */
-.account-toggle {
-    display: none;
+.input-container{
+    size: 100%;
+    left: 10px;
+}
+
+.subtitle,
+.image-container,
+.shape1,.shape2,
+.footer-image,
+.title {
+   display: none;
+}
+
 }
