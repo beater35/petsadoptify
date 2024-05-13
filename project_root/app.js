@@ -10,6 +10,7 @@ const adminRoute = require("./routes/admin.routes.js");
 const uploadRouter = require('./routes/upload.routes');
 const fileUpload = require('express-fileupload');
 const applicationFormRoutes = require("./routes/applicationFormRoutes");
+const forgotPasswordRoute = require('./routes/nodemailer.routes.js');
 
 const bodyParser = require('body-parser');
 const app = express();
@@ -46,8 +47,8 @@ app.use("/api/contacts", contactRoute);
 app.use("/api/images", imageRoute);
 app.use("/api/admin", adminRoute);
 app.use('/api', uploadRouter);
-// Use application form routes
 app.use("/api/application-form", applicationFormRoutes);
+app.use("/api", forgotPasswordRoute);
 
 // app.use("/api/auth", authRoutes);
 

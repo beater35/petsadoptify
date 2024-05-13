@@ -17,7 +17,7 @@ router.get('/:email', getUser);
 router.post('/', createUser);
 
 // Update user by email
-router.put('/:email', updateUser);
+router.patch('/:email', updateUser);
 
 // Delete user by email
 router.delete("/:email", deleteUser);
