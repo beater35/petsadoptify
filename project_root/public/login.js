@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   const loginForm = document.getElementById('login-form');
   const loginButton = document.querySelector('.loginbtn'); // Select the login button
 
+  const forgotPassword = document.getElementById("forgotPassword");
+
+    // Add click event listener
+    forgotPassword.addEventListener("click", function() {
+        // Redirect to another HTML page
+        window.location.href = "mail-verify.html";
+    });
+
   loginButton.addEventListener('click', async (event) => { // Add event listener to the login button
       event.preventDefault();
 

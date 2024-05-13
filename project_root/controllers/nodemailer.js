@@ -16,13 +16,13 @@ const transporter = nodemailer.createTransport({
 const sendForgotPasswordEmail = (email) => {
   // Define email options
   const mailOptions = {
-    from: 'your_email@gmail.com',
+    from: process.env.EMAIL_ADDRESS,
     to: email,
     subject: 'Password Reset',
     html: `
       <p>Hello,</p>
       <p>Please click the following link to reset your password:</p>
-      <a href="http://localhost:3000/api/forgot-password.html?email=${email}">Reset Password</a>
+      <a href="http://localhost:3000/forgot-password.html?email=${email}">Reset Password</a>
       <p>If you did not request a password reset, please ignore this email.</p>
     `
   };
