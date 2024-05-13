@@ -1,0 +1,426 @@
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Reset the default margin */
+    font-family: 'Poppins', sans-serif;
+
+}
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999; /* Ensures the header stays on top of other content */
+}
+
+.header-bar {
+    width: 100%;
+    height: 97px;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    width: 45.75px;
+    height: 46px;
+    position: absolute;
+    top: 30px;
+    left: 110px;
+}
+
+.brand {
+    width: auto;
+    position: absolute;
+    top: 40px;
+    left: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.brand span {
+    font-size: 24px;
+    font-family: Poppins;
+    line-height: 24px;
+    word-wrap: break-word;
+    margin: 0; /* Reset margin */
+}
+
+.brand .brand-name {
+    color: black;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.brand .brand-subtitle {
+    color: #EC9309;
+    font-weight: 300;
+}
+
+.menu-toggle {
+    display: none; /* Hide the menu toggle by default */
+}
+
+.menu {
+    width: auto;
+    position: absolute;
+    top: 45px;
+    left: 50%; /* Center the menu horizontally */
+    transform: translateX(-50%); /* Center the menu horizontally */
+    text-align: center;
+}
+
+.menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.menu-item:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth {
+    position: absolute;
+    top: 45px;
+    right: 110px;
+}
+
+.auth .menu-item {
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Add transition effect for color change */
+}
+
+.auth .menu-item.login:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+.auth .menu-item.signup:hover {
+    color: #FF7F50; /* Change color on hover */
+}
+
+
+
+.container {
+    top: 110px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 110px;
+}
+
+.shape1 {
+    width: 427.65px;
+    height: 519.27px;
+    left: 939.56px;
+    top: 263.67px;
+    position: absolute;
+    transform: rotate(21.45deg);
+    transform-origin: 0 0;
+    background: #494949;
+    border-radius: 99px;
+}
+
+.shape2 {
+    width: 460.83px;
+    height: 587.34px;
+    left: 917.65px;
+    top: 141px;
+    position: absolute;
+    transform: rotate(21.30deg);
+    transform-origin: 0 0;
+    background: #FCEED5;
+    border-radius: 99px;
+}
+
+.title {
+    left: 803px;
+    top: 29px;
+    position: absolute;
+    color: #494949;
+    font-size: 52px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 68px;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.subtitle {
+    left: 852px;
+    top: 87px;
+    position: absolute;
+    color: #494949;
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 54px;
+    word-wrap: break-word;
+}
+
+.image-container {
+    width: 647.95px;
+    height: 498.85px;
+    left: 657px;
+    top: 180px;
+    position: absolute;
+}
+
+.image-container .background {
+    width: 647.95px;
+    height: 498.85px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: #D9D9D9;
+}
+
+.image-container img {
+    width: 647px;
+    height: 575.01px;
+    left: 39px;
+    top: -45px;
+    position: absolute;
+}
+
+.register-title {
+    width: 100%;
+    height: 104px;
+    left: 0px;
+    top: 50px;
+    position: absolute;
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.welcome-message {
+    width: 500px;
+    height: 34px;
+    left: 0px;
+    top: 125px;
+    position: absolute;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.reset-button {
+    width: 620px;
+    height: 43px;
+    top: 300px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+    background: #EC9309;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.input-container {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.label{
+    color: black;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    word-wrap: break-word
+}
+
+.input {
+    width: 600px;
+    height: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    color: rgba(0, 0, 0,); font-size: 14px; font-family: Poppins;
+    opacity: 0.50; background: #FFD697;
+}
+
+
+.footer-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 800px;
+    z-index: 1;
+}
+
+.footer-background {
+    width: 100%;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #494949;
+}
+
+.logo1 {
+    position: absolute;
+    top: 175px;
+    left: 169px;
+}
+
+.logo1 .primary-text {
+    color: white;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.logo1 .secondary-text {
+    color: #EC9309;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.copyright,
+.footer-links,
+.quick-links,
+.navigation-links {
+    position: absolute;
+    color: white;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.copyright {
+    top: 249px;
+    left: 576px;
+    font-size: 15px;
+}
+
+.footer-links {
+    top: 249px;
+    left: 170px;
+}
+
+.footer-links .footer-link {
+    margin-right: 20px;
+    color: white; /* Keep the text white */
+}
+
+.quick-links {
+    top: 40px;
+    left: 580px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.navigation-links {
+    top: 90px;
+    left: 583px;
+}
+.footer-divider {
+    width: 100%;
+    height: 0.1px;
+    background-color: white;
+    position: absolute;
+    top: 235px; /* Adjust position as needed */
+}
+.navigation-links .nav-link {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-image {
+    width: 500px;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 980px;
+    z-index: 1;
+}
+
+.footer-logo {
+    width: 81px;
+    height: 82px;
+    position: absolute;
+    top: 80px;
+    left: 204px;
+}
+
+@media screen and (max-width: 768px) {
+.menu {
+    display: none; /* Hide the menu by default on smaller screens */
+    position: absolute;
+    top: 90px; /* Position the menu below the header */
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.08);
+    z-index: 999; /* Ensure it's above other content */
+}
+.logo {
+    left: 15px;
+}
+.brand{
+    left: 70px;
+}
+.menu-toggle {
+    display: block; /* Show the menu toggle on smaller screens */
+    position: absolute;
+    top: 30px;
+    right: 20px; /* Position the toggle on the right side */
+    cursor: pointer;
+    font-size: 30px; /* Increase the font size for the toggle icon */
+}
+
+.menu-item {
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.auth {
+    display: none; /* Hide the authentication buttons on smaller screens */
+}
+
+.input-container{
+    size: 100%;
+    left: 10px;
+}
+
+.subtitle,
+.image-container,
+.shape1,.shape2,
+.footer-image,
+.title {
+   display: none;
+}
+
+}
