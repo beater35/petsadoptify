@@ -392,27 +392,10 @@ body {
 /* Search Bar */
 .search-bar {
     position: absolute;
-    top: 150px;
-    left: 830px; /* Adjust the position as needed */
+    top: 170px;
+    left: 1320px; /* Adjust the position as needed */
     display: flex;
     align-items: center;
-}
-
-.search-bar input[type="text"] {
-    padding: 10px;
-    border: 2px solid #EC9309;
-    border-radius: 25px;
-    outline: none;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-.search-bar input[type="text"]::placeholder {
-    color: #858383; /* Placeholder text color */
-}
-
-.search-bar input[type="text"]:focus {
-    border-color: #FF7F50; /* Border color on focus */
 }
 
 .search-bar .search-btn img {
@@ -424,6 +407,7 @@ body {
 .searchButton:hover {
     background: #FF7F50; /* Background color on hover */
 }
+
 
 .search-bar button {
     width: 40px;
@@ -440,6 +424,10 @@ body {
     height: 20px;
     display: block;
     margin: auto;
+}
+.filter-container{
+    position: absolute;
+    left: -450px;
 }
 /* Styling for the account icon */
 .account-icon {

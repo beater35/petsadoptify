@@ -48,7 +48,7 @@
             <div class="label">Email:</div>
             <input type="email" class="input" id="email" name="email" placeholder="Enter a valid email.">
             <div class="label">Password:</div>
-            <input type="password" class="input" id="password" name = "password" placeholder="Password">
+            <input type="password" class="input" id="password" name="password" placeholder="Password" onfocus="showPasswordPlaceholder()">
             <div class="forgot-password" id="forgotPassword">Forgot Password?</div>
 
         </div>
@@ -81,5 +81,24 @@
         <div class="footer-divider"></div>
     </div>
     <script src="login.js"></script>
+    <script>
+        function showPasswordPlaceholder() {
+    var passwordInput = document.getElementById("password");
+    passwordInput.placeholder = "Password (click to show)";
+    
+    // Add click event listener to the password input field to toggle the visibility
+    passwordInput.addEventListener("click", function() {
+        passwordInput.type = "text";
+        passwordInput.placeholder = "Password";
+        
+        // Reset input type and placeholder after a delay
+        setTimeout(function() {
+            passwordInput.type = "password";
+            passwordInput.placeholder = "Password (click to show)";
+        }, 2000); // Change the delay as needed
+    });
+}
+
+    </script>
 </body>
 </html>
