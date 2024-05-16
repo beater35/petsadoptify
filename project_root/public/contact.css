@@ -1,8 +1,7 @@
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin */
-    font-family: 'Poppins', sans-serif;
-
+    font-family: 'Poppins', Arial, sans-serif;
 }
 .header {
     position: fixed;
@@ -124,6 +123,14 @@ body {
 .auth .menu-item.signup:hover {
     color: #FF7F50; /* Change color on hover */
 }
+
+.feedback-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: green; /* Adjust color as needed */
+    display: none; /* Hide by default */
+}
+
 
 .footer-section {
     position: relative;

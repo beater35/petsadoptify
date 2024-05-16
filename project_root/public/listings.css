@@ -11,7 +11,7 @@
     background-color: #FF7F50;
     position: absolute;
     bottom: -5px;
-    left: 50%; /* Position at the center of the active button */
+    left: 50%; /* Position at the center of the active button */ 
     transform: translateX(-50%); /* Adjust for center alignment */
     transition: width 0.3s; /* Add transition effect */
 }
@@ -19,7 +19,7 @@
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 
 }
 .header {
