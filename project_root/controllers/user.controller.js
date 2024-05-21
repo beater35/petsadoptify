@@ -21,6 +21,27 @@ const getUser = async (req, res) => {
 	}
 };
 
+// Get user by email
+const getUser_username = async (req, res) => {
+    const email = req.params.email;
+
+    try {
+        // Find user by email in the database
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            // If user with the email is not found, return 404 Not Found error
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        // If user is found, return user data, including username
+        res.status(200).json({ username: user.username });
+    } catch (error) {
+        // If there's an error, return 500 Internal Server Error
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
 // Create user
 const createUser = async (req, res) => {
 	try {
@@ -85,5 +106,6 @@ module.exports = {
     createUser,
     updateUser,
     deleteUser,
-    deleteAll
+    deleteAll,
+    getUser_username
 }

@@ -62,98 +62,116 @@
         </div>
         <div class="auth">
             <div id="authSection"></div>
-
+        
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     var loggedInEmail = localStorage.getItem("loggedInEmail");
                     var authSection = document.getElementById("authSection");
-            
+        
                     if (loggedInEmail) {
-                        // Create account card HTML
-                        var accountDiv = document.createElement("div");
-                        accountDiv.classList.add("account");
-                    
-                        var label = document.createElement("label");
-                        label.setAttribute("for", "toggle-account");
-                        label.classList.add("menu-item", "account-icon");
-                        label.addEventListener("click", function() {
-                            // Toggle the display of the account card when the label is clicked
-                            accountCardDiv.classList.toggle("show");
-                        });
-                    
-                        var img = document.createElement("img");
-                        img.setAttribute("src", "images/user.png");
-                        img.setAttribute("alt", "User Icon");
-                        img.style.width = "30px";
-                        img.style.height = "30px";
-                        label.appendChild(img);
-                    
-                        var input = document.createElement("input");
-                        input.setAttribute("type", "checkbox");
-                        input.setAttribute("id", "toggle-account");
-                        input.classList.add("account-toggle");
-                    
-                        var accountCardDiv = document.createElement("div");
-                        accountCardDiv.classList.add("account-card");
-                    
-                        var userPhoto = document.createElement("img");
-                        userPhoto.setAttribute("src", "images/Dog.png");
-                        userPhoto.setAttribute("alt", "User Photo");
-                        userPhoto.classList.add("user-photo");
-                    
-                        var userDetailsDiv = document.createElement("div");
-                        userDetailsDiv.classList.add("user-details");
-                    
-                        var usernameP = document.createElement("p");
-                        usernameP.classList.add("username");
-                        usernameP.textContent = "JohnDoe";
-                    
-                        var mailP = document.createElement("p");
-                        mailP.classList.add("mail");
-                        mailP.textContent = loggedInEmail;
-                    
-                        var logoutButton = document.createElement("a");
-                        logoutButton.setAttribute("href", "#"); // Change href to "#" for demonstration purpose
-                        logoutButton.classList.add("logout-button");
-                        logoutButton.textContent = "Logout";
-                        logoutButton.addEventListener("click", function(event) {
-                            event.preventDefault(); // Prevent default behavior of anchor tag
-                            // Remove loggedInEmail from local storage
-                            localStorage.removeItem("loggedInEmail");
-                            // Redirect to home page or login page
-                            window.location.href = "home.html"; // Change URL to desired logout page
-                        });
-                    
-                        userDetailsDiv.appendChild(usernameP);
-                        userDetailsDiv.appendChild(mailP);
-                        accountCardDiv.appendChild(userPhoto);
-                        accountCardDiv.appendChild(userDetailsDiv);
-                        accountCardDiv.appendChild(logoutButton);
-                    
-                        accountDiv.appendChild(label);
-                        accountDiv.appendChild(input);
-                        accountDiv.appendChild(accountCardDiv);
-                    
-                        authSection.appendChild(accountDiv);
+                        // Make a request to your server to fetch the user data based on the email
+                        fetch(`http://localhost:3000/api/users/${loggedInEmail}`)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error("Failed to fetch user data");
+                                }
+                                return response.json();
+                            })
+                            .then(userData => {
+                                // Extract the username from userData
+                                var username = userData.username;
+        
+                                // Create account card HTML
+                                var accountDiv = document.createElement("div");
+                                accountDiv.classList.add("account");
+        
+                                var label = document.createElement("label");
+                                label.setAttribute("for", "toggle-account");
+                                label.classList.add("menu-item", "account-icon");
+                                label.addEventListener("click", function() {
+                                    // Toggle the display of the account card when the label is clicked
+                                    accountCardDiv.classList.toggle("show");
+                                });
+        
+                                var img = document.createElement("img");
+                                img.setAttribute("src", "images/user.png");
+                                img.setAttribute("alt", "User Icon");
+                                img.style.width = "30px";
+                                img.style.height = "30px";
+                                label.appendChild(img);
+        
+                                var input = document.createElement("input");
+                                input.setAttribute("type", "checkbox");
+                                input.setAttribute("id", "toggle-account");
+                                input.classList.add("account-toggle");
+        
+                                var accountCardDiv = document.createElement("div");
+                                accountCardDiv.classList.add("account-card");
+        
+                                var userPhoto = document.createElement("img");
+                                userPhoto.setAttribute("src", "images/Dog.png");
+                                userPhoto.setAttribute("alt", "User Photo");
+                                userPhoto.classList.add("user-photo");
+        
+                                var userDetailsDiv = document.createElement("div");
+                                userDetailsDiv.classList.add("user-details");
+        
+                                var usernameP = document.createElement("p");
+                                usernameP.classList.add("username");
+                                usernameP.textContent = username;
+        
+                                var mailP = document.createElement("p");
+                                mailP.classList.add("mail");
+                                mailP.textContent = loggedInEmail;
+        
+                                var logoutButton = document.createElement("a");
+                                logoutButton.setAttribute("href", "#"); // Change href to "#" for demonstration purpose
+                                logoutButton.classList.add("logout-button");
+                                logoutButton.textContent = "Logout";
+                                logoutButton.addEventListener("click", function(event) {
+                                    event.preventDefault(); // Prevent default behavior of anchor tag
+                                    // Remove loggedInEmail from local storage
+                                    localStorage.removeItem("loggedInEmail");
+                                    // Redirect to home page or login page
+                                    window.location.href = "home.html"; // Change URL to desired logout page
+                                });
+        
+                                userDetailsDiv.appendChild(usernameP);
+                                userDetailsDiv.appendChild(mailP);
+                                accountCardDiv.appendChild(userPhoto);
+                                accountCardDiv.appendChild(userDetailsDiv);
+                                accountCardDiv.appendChild(logoutButton);
+        
+                                accountDiv.appendChild(label);
+                                accountDiv.appendChild(input);
+                                accountDiv.appendChild(accountCardDiv);
+        
+                                authSection.appendChild(accountDiv);
+                            })
+                            .catch(error => {
+                                console.error("Error fetching user data:", error.message);
+                                // Handle the error as needed (e.g., display an error message to the user)
+                            });
                     } else {
                         // Create login and signup links HTML
                         var loginLink = document.createElement("a");
                         loginLink.setAttribute("href", "login.html");
                         loginLink.classList.add("menu-item", "login");
                         loginLink.textContent = "Login";
-                    
+        
                         var signupLink = document.createElement("a");
                         signupLink.setAttribute("href", "signup.html");
                         signupLink.classList.add("menu-item", "signup");
                         signupLink.textContent = "Signup";
-                    
+        
                         authSection.appendChild(loginLink);
                         authSection.appendChild(signupLink);
                     }
-                    
+        
                 });
             </script>
         </div>
+        
     </div>
         
     <div class="register-title">Adopt a pet!</div>

@@ -566,3 +566,76 @@ input[type="submit"]:hover {
     margin-top: 10px;
     text-align: justify;
 }
+
+/* Styling for the account icon */
+.account-icon {
+    cursor: pointer;
+}
+
+/* Styling for the account card */
+.account-card {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    top: 40px;
+    right: 10px;
+    z-index: 999;
+    width: 200px; /* Adjust width as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a better look */
+    border-radius: 10px; /* Rounded corners */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+}
+
+/* Show the account card when the checkbox is checked */
+.account-toggle:checked + .account-card {
+    display: block;
+}
+
+/* Style for user photo in account card */
+.user-photo {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it circular */
+    display: block;
+    margin: 0 auto; /* Center the image */
+    margin-bottom: 10px; /* Add some space below the image */
+}
+
+/* Style for username and email in account card */
+.user-details {
+    text-align: center; /* Center-align the text */
+}
+
+/* Style for username */
+.username {
+    font-size: 20px; /* Bigger font size */
+    font-weight: bold; /* Bold font */
+}
+
+/* Style for email */
+.mail {
+    position: relative;
+    top: -20px;
+    font-size: 14px; /* Smaller font size */
+}
+
+/* Style for logout button */
+.logout-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Optional: Add hover effect to the logout button */
+.logout-button:hover {
+    color: #EC9309;
+}
+
+/* Hide the checkbox */
+.account-toggle {
+    display: none;
+}
