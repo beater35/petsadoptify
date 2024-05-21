@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.log('Pet added successfully:', petData);
 
             setTimeout(() => {
-                window.location.reload();
+                window.location.reload();gt
             }, 200);
 
         } catch (error) {

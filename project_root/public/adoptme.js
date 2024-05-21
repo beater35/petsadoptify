@@ -51,6 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Get the element that closes the popup
     const closeButton = document.querySelector(".close-popup");
+     // Handle the form submission
+     const adoptionForm = document.getElementById('adoption-form');
+     adoptionForm.addEventListener('submit', (event) => {
+         const successMessage = document.getElementById('success-message');
+         successMessage.style.display = 'block';
+    // Hide the success message after 5 seconds
+     setTimeout(() => {
+        successMessage.style.display = 'none';
+     }, 5000);
+         // Optionally, reset the form fields
+         adoptionForm.reset();
+     });
 
     // When the user clicks on <span> (x), close the popup
     closeButton.onclick = function() {

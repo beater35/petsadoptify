@@ -11,7 +11,7 @@
     background-color: #FF7F50;
     position: absolute;
     bottom: -5px;
-    left: 50%; /* Position at the center of the active button */
+    left: 50%; /* Position at the center of the active button */ 
     transform: translateX(-50%); /* Adjust for center alignment */
     transition: width 0.3s; /* Add transition effect */
 }
@@ -19,7 +19,7 @@
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     margin: 0; /* Reset the default margin */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 
 }
 .header {
@@ -500,4 +500,17 @@ body {
 /* Hide the checkbox */
 .account-toggle {
     display: none;
+}
+
+/* Add this CSS to your stylesheet */
+.no-pets-message {
+    text-align: center;
+    font-size: 20px;
+    color: #333; /* Dark gray color for text */
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed #ccc; /* Light gray dashed border */
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Very light gray background */
+    font-family: Arial, sans-serif; /* Clean and readable font */
 }

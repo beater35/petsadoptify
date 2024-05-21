@@ -40,3 +40,23 @@ form.addEventListener('submit', async (event) => {
     console.error('An error occurred:', error);
   }
 });
+document.addEventListener('DOMContentLoaded', (event) => {
+  const form = document.getElementById('contactForm');
+  const feedbackMessage = document.getElementById('feedbackMessage');
+
+  form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Display feedback message
+      feedbackMessage.textContent = 'Your message has been sent successfully!';
+      feedbackMessage.style.display = 'block';
+
+      // Reset the form
+      form.reset();
+
+      // Optionally hide the feedback message after a few seconds
+      setTimeout(() => {
+          feedbackMessage.style.display = 'none';
+      }, 5000); // 5000 milliseconds = 5 seconds
+  });
+});
