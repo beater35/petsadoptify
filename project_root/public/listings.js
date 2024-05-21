@@ -80,6 +80,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.error('Listing container not found');
             }
         });
+        if (listingContainer.children.length === 0) {
+          const noPetsMessage = document.createElement('div');
+          noPetsMessage.classList.add('no-pets-message');
+          noPetsMessage.textContent = 'No pets found';
+          listingContainer.appendChild(noPetsMessage);
+        }
     })
     .catch(error => {
         console.error('Error fetching pet data:', error);
@@ -205,6 +211,12 @@ document.addEventListener('DOMContentLoaded', async () => {
               console.error("Listing container not found");
             }
           });
+          if (listingContainer.children.length === 0) {
+            const noPetsMessage = document.createElement('div');
+            noPetsMessage.classList.add('no-pets-message');
+            noPetsMessage.textContent = 'No pets found';
+            listingContainer.appendChild(noPetsMessage);
+          }
         })
         .catch((error) => {
           console.error("Error fetching pet data:", error);
